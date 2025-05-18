@@ -44,6 +44,7 @@
 #### [yair hayut](https://mathematics.huji.ac.il/people/yair-hayut-0)
 #### [Zoltan Vidnyanszky](https://vidnyanz.elte.hu/)
 #### [Obrad Kasum](https://obradkasum.github.io/)
+#### [Stephen C. Jackson](https://sites.math.unt.edu/~sjackson/index.html)
 # Conferences
 # Seminars
 #### [The Baltic Set Theory Seminar](https://www.impan.pl/~gsargsyan/bsts.html)
