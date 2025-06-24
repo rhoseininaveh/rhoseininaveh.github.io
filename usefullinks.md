@@ -50,6 +50,7 @@
 #### [The Baltic Set Theory Seminar](https://www.impan.pl/~gsargsyan/bsts.html)
 #### [bernays](https://video.ethz.ch/speakers/bernays.html)
 #### [Appalachian set theory](https://www.math.cmu.edu/~eschimme/Appalachian/Index.html)
+#### [Set Theory Talks](https://settheory.mathtalks.org/)
 # Websites
 #### [European Set Theory Society](https://ests.wordpress.com/)
 #### [IAS: School of Mathematics](https://www.ias.edu/math)
