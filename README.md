@@ -20,7 +20,7 @@ Download [English]() or [Farsi](Academic CV RHoseiniNaveh.pdf) version.
 ### talk slides
 # Contact
 ### e-mail:
-#### [r.hoseini.nave@Gmail.com](r.hoseini.nave@Gmail.com)
+#### r.hoseini.nave@Gmail.com
 #### r.hoseini@math.uk.ac.ir
 ### WhatsApp & Telegram:
 #### +4366565956490
