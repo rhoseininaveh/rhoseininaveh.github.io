@@ -20,8 +20,11 @@ Download [English]() or [Farsi](Academic CV RHoseiniNaveh.pdf) version.
 ### talk slides
 #### Weekly Lectures - Mahani Math Research Institute - Shahid Bahonar University of Kerman
 ##### (1) Independence of the CH with gentle introduction to Forcing -[PDF](Independence of the $CH$ with gentle introduction to Forcing.pdf)- [TeX](Independence of the $CH$ with gentle introduction to Forcing.tex)
-#### Seminar on Mathematical Logic and its Applications - IPM - 1403
+#### Seminar on Mathematical Logic and its Applications - IPM 1403
 ##### Adding  Abraham clubs and  alpha-properness -[PDF](logic seminar 1403.pdf)- [TeX](logic seminar 1403.tex)
+#### The 10th Annual Conference of the Iranian Association for Logic - Department of mathematics - Amirkabir university of technology - Tehran 1401
+##### Adding Highly Generic Subsets of $\omega_2$ - [PDF](manteq.pdf) - [Tex](manteq.tex)
+
 # Contact
 ### e-mail:
 #### r.hoseini.nave@Gmail.com
