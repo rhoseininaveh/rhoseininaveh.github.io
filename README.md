@@ -18,12 +18,9 @@ Download [English]() or [Farsi](Academic CV RHoseiniNaveh.pdf) version.
 #### (2) [Adding highly generic subsets of $\omega_2$](https://arxiv.org/abs/2301.09435), with [M. Golshani](https://math.ipm.ac.ir/~golshani/) and [E. Eslami](https://pmath.uk.ac.ir/~esfandiar.eslami), in [Math. Log. Quart., 70(1): 126-133 (2024)](https://onlinelibrary.wiley.com/doi/10.1002/malq.202300007).
 #### (3) [Adding Abraham clubs and $\alpha$-properness](https://arxiv.org/abs/2409.09697), with [M. Golshani](https://math.ipm.ac.ir/~golshani/), submited (2024).
 ### talk slides
-#### Weekly Lectures - Mahani Math Research Institute - Shahid Bahonar University of Kerman
-##### (1) Independence of the CH with gentle introduction to Forcing -[PDF](Independence of the $CH$ with gentle introduction to Forcing.pdf)- [TeX](Independence of the $CH$ with gentle introduction to Forcing.tex)
-#### Seminar on Mathematical Logic and its Applications - IPM 1403
-##### Adding  Abraham clubs and  alpha-properness -[PDF](logic seminar 1403.pdf)- [TeX](logic seminar 1403.tex)
-#### The 10th Annual Conference of the Iranian Association for Logic - Department of mathematics - Amirkabir university of technology - Tehran 1401
-##### Adding Highly Generic Subsets of omega_2 - [PDF](manteq.pdf) - [Tex](manteq.tex)
+#### Independence of the CH with gentle introduction to Forcing -[PDF](Independence of the $CH$ with gentle introduction to Forcing.pdf)- [TeX](Independence of the $CH$ with gentle introduction to Forcing.tex) (Weekly Lectures - Mahani Math Research Institute - Shahid Bahonar University of Kerman)
+#### Adding  Abraham clubs and  alpha-properness -[PDF](logic seminar 1403.pdf)- [TeX](logic seminar 1403.tex) (Seminar on Mathematical Logic and its Applications - IPM 1403)
+#### Adding Highly Generic Subsets of omega_2 - [PDF](manteq.pdf) - [Tex](manteq.tex) (The 10th Annual Conference of the Iranian Association for Logic - Department of mathematics - Amirkabir University of Technology - Tehran 1401)
 
 # Contact
 ### e-mail:
