@@ -23,7 +23,7 @@ Download [English]() or [Farsi](Academic CV RHoseiniNaveh.pdf) version.
 
 #### Independence of the CH with gentle introduction to Forcing -[PDF](Independence.pdf)- [TeX](Independence.tex) (Weekly Lectures - Mahani Math Research Institute - Shahid Bahonar University of Kerman)
 #### Forcing With Elementary Substructures -[PDF](proposalslide(1).pdf)- [TeX](proposalslide(1).tex) (Weekly Lectures - Mahani Math Research Institute - Shahid Bahonar University of Kerman)
-#### Forcing With side condition -[PDF](Forcing with side condition.pdf)- [TeX](Forcing with side condition.tex) (Weekly Lectures - Mahani Math Research Institute - Shahid Bahonar University of Kerman)
+#### Forcing With side condition -[PDF](Fwsc.pdf)- [TeX](Fwsc.tex) (Weekly Lectures - Mahani Math Research Institute - Shahid Bahonar University of Kerman)
 # Contact
 ### e-mail:
 #### r.hoseini.nave@Gmail.com
