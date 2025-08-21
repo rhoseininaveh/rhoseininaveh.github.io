@@ -1,0 +1,254 @@
+\documentclass{beamer}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{yhmath}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{mathalfa}
+\usepackage{upgreek}
+\usepackage{yfonts}
+\usepackage{mathrsfs}
+\usepackage{todonotes}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{accents}
+%\usetheme{Warsaw}
+%\usetheme{Madrid}
+%\usetheme{Bergen}
+%\usetheme{AnnArbor}
+%\usetheme{CambridgeUS}\setbeamercovered{dynamic}
+%\usetheme{Hannover}
+%\usetheme{Antibes}
+%\usetheme{Copenhagen}
+%\usetheme{Marburg} 
+\usetheme{Singapore}
+%\usetheme{Szeged}
+\usefonttheme{serif}
+\begin{document}
+\title{\textbf{Adding  Abraham clubs and  $\alpha$-properness}}
+
+\author{\textbf{Rouholah Hoseini Naveh}}
+%{
+%\setbeamercolor{background canvas}{bg=yellow}
+\begin{frame}
+\date{}
+\maketitle
+\vspace{-2.7cm}
+\begin{center}
+Joint with\\
+\textbf{Mohammad Golshani}
+\end{center}
+\vspace{1cm}
+\begin{center}
+Seminar on Mathematical Logic and its Applications\\
+IPM - 1403/3/9
+\end{center}
+\end{frame}
+%%%%%%%%%%%
+\begin{frame}
+\frametitle{Some Well known Definitions}
+\begin{block}{club}
+Let $\kappa$ be a regular uncountable cardinal. A set $C\subseteq \kappa$ is a \textbf{closed unbounded subset (club)} in $\kappa$ if: \pause
+\begin{enumerate}
+\item
+$C$ is unbounded in $\kappa$ \pause i.e. $\sup(C \cap \kappa)=\kappa$; \pause
+\item 
+$C$ contains all its limit points \pause i.e. $\forall \alpha<\kappa \sup(C \cap \alpha)\in C$.
+\end{enumerate}
+\end{block}
+\pause
+\begin{block}{Stationary}
+A set $S \subseteq \kappa$ is \textbf{stationary} if $S \cap C \neq \emptyset$ for every club $C$ of $\kappa$.
+\end{block}
+\pause
+\begin{block}{Notation: $[X]^{\kappa}$}
+$\lbrace Y\subseteq X \colon |Y|=\kappa \rbrace$, for a cardinal $\kappa \leq |X|$
+\end{block}
+\pause
+\begin{block}{Proper Forcing}
+Shelah: A notion of forcing $\mathds{P}$ is \textbf{proper} if for every uncountable cardinal $\lambda$, every stationary subset of $[\lambda]^{\aleph_0}$ remains stationary in the generic extension.every countable set of ordinals in the extension is covered by a countable set of ordinals from the ground model
+\end{block}
+\end{frame}
+%%%%%%%%%%%%
+\begin{frame}
+\begin{block}{$H_{\lambda}$}
+Let $\lambda$ be a regular cardinal. $H_{\lambda}$ is the collection of all sets hereditarily of cardinality less than $\lambda$, \pause i.e. $\lbrace x \colon |tr cl(x)| < \lambda \rbrace$
+\end{block}
+\pause
+\begin{block}{Master condition}
+Let $M \prec H_{\lambda}$. A condition $q \in \mathds{P}$ is $(M, \mathds{P})$-generic if for every dense open $D\subseteq \mathds{P}$ with $D \in M$, the set $D\cap M$ is predense below $q$, \pause i.e. $(\forall q' \leq q) (\exists r \in D \cap M) (\exists s \in \mathds{P})(s \leq q', r)$
+\end{block}
+\pause
+\begin{theorem}[Shelah]
+A forcing notion $\mathds{P}$ is proper if and only if for every large
+enough regular cardinals $\lambda$, and for club many \textbf{countable} $M\prec H_{\lambda}$, for every condition $p \in M$, there is $q \leq p$ which is an $(M, \mathds{P})$-generic condition.
+\end{theorem}
+\pause
+\begin{block}{strong properness}
+using strongly $(M, \mathds{P})$-generic conditions, \pause $D \subseteq \mathds{P} \cap M$ must be predense below $q$.
+\end{block}
+\end{frame}
+%%%%%%%%%%%
+\begin{frame}
+\begin{block}{preserving $\aleph_1$}
+If $\mathds{P}$ is strongly proper, then $\mathds{P}$ is proper, in particular forcing with $\mathds{P}$ does not collapse $\aleph_1$.
+\end{block}
+\pause
+\begin{block}{Tower}
+Let $\alpha< \omega_1$. The sequence $\mathcal{N}=\langle N_{\xi}\colon \xi \leq \alpha \rangle$ is said to be an $\alpha$-tower if for some regular cardinal $\lambda$,
+\begin{enumerate}
+\item
+$N_{\xi} \prec H_{\lambda}$, countable;
+\item
+$N_{\xi} \in N_{\xi +1}$ for $\xi < \alpha$;
+\item
+$N_{\delta}= \bigcup_{\xi < \delta}N_{\xi}$ for limit ordinals $\delta \leq \alpha$;
+\item
+$\langle N_{\zeta}: \zeta \leq \xi \rangle \in N_{\xi +1}$ for every $\xi < \alpha$.
+\end{enumerate}
+\end{block}
+\pause
+\begin{block}{$\alpha$-properness}
+$\mathbb{P}$ is called $\alpha$-proper if for every $\alpha$-tower
+with $\mathbb{P} \in N_0$, every condition $p \in \mathbb{P} \cap N_0$ has an extension $q$ which is a master condition for each $N_{\xi} \in \mathcal{N}$.
+\end{block}
+\end{frame}
+%%%%%%%%%
+\begin{frame}
+\begin{block}{Notation: $\mathcal{S}$ }
+The collection of all countable $M \prec H_{\omega_1}$.
+\end{block}
+\pause
+\begin{block}{Notation: $\delta_M$}
+The ordinal $M \cap \omega_1$, for $M \in \mathcal{S}$.
+\end{block}
+\pause
+\begin{block}{}
+Let  $\mathbb{P}$ consist of pairs $p=\langle \mathcal{M}_p, f_p \rangle$, where
+\begin{enumerate}
+\item
+$\mathcal{M}_p= \langle M^p_i: i < n_p  \rangle$ is a finite $\in$-increasing sequence of elements of $\mathcal{S}$, and
+\pause
+\item
+the function $f_p: \mathcal{M}_p \longrightarrow H_{\omega_1}$ is defined such that $f_p(M^p_i)$ is a finite subset of $M^p_{i+1}$ if $i<n_p-1$, and $f_p(M^p_{n_p-1})$ is a finite subset of $H_{\omega_1}$.
+\end{enumerate}
+\pause
+$q \leq p$ if and only if $\mathcal{M}_p \subseteq \mathcal{M}_q$ and $f_p(M) \subseteq f_q(M)$ for every $M \in \mathcal{M}_p$.
+\end{block}
+\end{frame}
+%%%%%%%%%
+\begin{frame}
+\begin{lemma}
+For every $p \in \mathbb{P}$ and $\gamma \in \omega_1$, there is  $p' \leq p$ such that $\gamma < \delta_{N}$ for some $N \in \mathcal{M}_{p'}$.
+\end{lemma}
+\pause
+\begin{block}{Proof}
+There exists $N \prec H_{\omega_1}$ such that $p, {\gamma} \in N$. Let $p'=\langle \mathcal{M}_{p'}, f_{p'} \rangle$ be such that:
+\begin{itemize}
+\item
+$\mathcal{M}_{p'}= \mathcal{M}_p \cup \{N\}$
+\item
+$f_{p'}(M)=f_p(M) \qquad M \in \mathcal{M}_p$
+\item 
+$f_{p'}(N)=\emptyset$
+\end{itemize}
+\end{block}
+\pause
+\begin{Lemma}
+If $G \subseteq \mathbb{P}$ is a generic filter, then $$C=\{\delta_M \colon M \in \mathcal{M}_p \text{ for some } p \in G \}$$ is a club
+of $\omega_1$.
+\end{Lemma}
+\end{frame}
+\begin{frame}
+\framesubtitle{Proof}
+Given any $\gamma \in \omega_1$\\
+\pause
+$D_{\gamma}= \{q \in \mathbb{P} \colon \exists M \in \mathcal{M}_q(\gamma < \delta_M)\}$ is dense
+\pause
+\begin{center}
+ $C$ is unbounded in $\omega_1$
+\end{center}
+\pause
+claim: If $p$ forces $\gamma$ to be a limit point of $\dot{C}$, then $p$ also forces it is an element of $\dot{C}$.\\
+\pause
+Proof: Suppose not. \pause There is no $M \in \mathcal{M}_p$ with $\delta_{M}= \gamma$\\
+\pause
+For some $i$, $\delta_{M^p_i} < \gamma < \delta_{M^p_{i+1}}$\\
+\pause 
+Let $\xi < \delta_{M^p_{i+1}}$ be any ordinal greater than $\gamma$\\
+\pause
+$q= \langle \mathcal{M}_q, f_q \rangle$
+\begin{itemize}
+\item
+$\mathcal{M}_q= \mathcal{M}_p$
+\item
+$f_q(M)=f_p(M)$ for all $M \neq {M^p_{i}}$
+\item
+$f_q({M^p_{i}})=f_p({M^p_{i}}) \cup \{\xi\}$
+\end{itemize}
+\end{frame}
+%%%%%%%%%%
+\begin{frame}
+\begin{block}{}
+$\mathbb{P}$ is strongly proper.
+\end{block}
+\begin{block}{}
+$\mathbb{P}$ is not  $\omega$-proper.
+\end{block}
+\begin{proof}
+Let $p \in \mathbb{P} \cap N_0\in \mathcal{N}$ an $\omega$-tower\\
+\pause
+Let $q \leq p$ is $(\mathcal{N}, \mathbb{P})$-generic condition\\
+\pause
+$q \Vdash$``$\dot{C} \cap \delta_{N_i}$ is unbounded in $\delta_{N_i}$'', hence $q \Vdash$``$ \delta_{N_i} \in \dot{C}$''.\\
+
+There are $n, i$ and $q' \leq q$,  such that $\delta_{N^{q'}_i} < \delta_{N_n} < \delta_{N_{\omega}} <\delta_{N^{q'}_{i+1}}$.\\
+\pause
+Let $\xi < \delta_{N^{q'}_{i+1}}$ be such that $\delta_{N_\omega} < \xi$\\
+\pause
+let $q''$ be such that
+\begin{itemize}
+\item
+$\mathcal{M}_{q''}= \mathcal{M}_{q'}$
+\item 
+$f_{q''}(M)= f_{q'}(M)$ for all $M \neq N^{q'}_{i}$
+\item 
+$f_{q''}(N^{q'}_{i})= f_{q'}(N^{q'}_{i}) \cup \{\xi\}$
+\end{itemize}
+\pause
+$q'' \leq q$ such that for all $r \leq q''(r \Vdash `` \delta_{N_n} \notin \dot{C}$''$)$.
+\end{proof}
+\end{frame}
+%%%%%%%%%%%
+\begin{frame}
+\begin{definition}
+Let $\alpha < \omega_1$ be an indecomposable ordinal.\\
+$p=\langle \mathcal{M}_p, f_p, \mathcal{W}_p \rangle \in \mathbb{P}[\alpha]$ such that:
+\begin{itemize}
+\item
+$\mathcal{M}_p=\langle M^p_{\xi} \colon \xi \leq \gamma_p \rangle$ is an $\in$-increasing sequence of elements of $\mathcal{S}$ for some $\gamma_p < \alpha$ which is continuous at limits;
+\item
+the function $f_p: \mathcal{M}_p \longrightarrow H_{\omega_1}$ is defined such that $f_p(M^p_{\xi})$ is a finite subset of $M^p_{\xi+1}$ for $\xi < \gamma$, and $f_p(M^p_{\gamma})$ is a finite subset of $H_{\omega_1}$; and
+\item
+the witness $\mathcal{W}_p$ is a countable $\in$-chain of elements of $\mathcal{S}$ such that for every $N \in \mathcal{W}_p$, $p{\restriction}_N= \langle \mathcal{M}_p \cap N, f_p{\restriction}_{\mathcal{M}_p \cap N}, \mathcal{W}_p \cap N \rangle \in N$.
+\end{itemize}
+$q \leq p$ if and only if $\mathcal{M}_p \subseteq \mathcal{M}_q$, $f_p(M) \subseteq f_q(M)$ for every $M \in \mathcal{M}_p$ and $\mathcal{W}_p \subseteq \mathcal{W}_q$.
+\end{definition}
+\end{frame}
+%%%%%%%%%%
+\begin{frame}
+\begin{lemma}
+If $G \subseteq \mathbb{P}[\alpha]$ is a generic filter, then $C=\{\delta_M \colon M \in \mathcal{M}_p \text{ for some } p \in G\}$ is a club.
+\end{lemma}
+\begin{theorem}\label{main}
+$\mathbb{P}[\alpha]$ is $\beta$-proper for every $\beta < \alpha$, but is not $\alpha$-proper.
+\end{theorem}
+\end{frame}
+\begin{frame}
+\begin{center}
+\textbf{{\Huge Thank You}}
+\end{center}
+\end{frame}
+\end{document}
