@@ -1,0 +1,302 @@
+\documentclass{beamer}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{yhmath}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{mathalfa}
+\usepackage{upgreek}
+\usepackage{yfonts}
+\usetheme{Warsaw}
+%\usetheme{Madrid}
+%\usetheme{Bergen}
+%\usetheme{AnnArbor}
+%\usetheme{CambridgeUS}\setbeamercovered{dynamic}
+%\usetheme{Hannover}
+\usetheme{Antibes}
+%\usetheme{Copenhagen}
+%\usetheme{Marburg} 
+%\usefonttheme{serif}
+\begin{document}
+\title{Independence of the $CH$ with gentle introduction to Forcing}
+
+\author{Rouholah Hoseini Naveh}
+%{
+%\setbeamercolor{background canvas}{bg=yellow}
+\begin{frame}
+\date{}
+\maketitle
+
+\begin{center}
+1402/12/13
+\end{center}
+\end{frame}
+\begin{frame}
+\frametitle{What is $\omega$?}
+$ \emptyset$ exists\\
+If $A$ exists, then $\{A\}$ so\\
+If $A, B$ exists, then $A \cup B$ so
+\pause
+\begin{itemize}
+\item $\emptyset := 0$
+\pause
+\item $0 \cup \{0\}=\emptyset \cup \{\emptyset\}=\{\emptyset\} :=1$
+\pause
+\item  $1 \cup \{1\}=\{0, 1\} = \{\emptyset, \{\emptyset\}\}:=2$
+\pause
+\item $2 \cup \{2\}=\{0, 1, 2\}=\{\emptyset, \{\emptyset\}, \{\emptyset, \{\emptyset\}\}\}:=3$
+\pause
+\item $\{0, 1, 2, 3\} :=4$
+\pause
+\item $\{0, 1, 2, 3, \dots, n\}:=n+1$ \hspace{20 mm} $n \cup \{n\} :=n+1$
+\end{itemize}
+\pause
+\begin{definition}
+$\{0, 1, 2, 3, \dots\}:=\omega$
+\end{definition}
+\end{frame}
+\begin{frame}
+\frametitle{misunderstanding}
+$\omega \cup \{\omega\}:= \omega +1$\\
+\pause
+$\omega+1 =\{0, 1, 2, \dots , \omega\}$
+\pause
+\begin{block}{}
+$f: \omega +1 \longrightarrow \omega$ by $f(\omega)= 0$ and $f(n)=n+1$ is $1-1$ and onto.
+\end{block}
+\pause
+\begin{block}{}
+there is no $1-1$, onto and order preserving function
+\end{block}
+\pause
+\vspace{10mm}
+$0< 1< 2< \dots< \omega< \omega +1< \omega +2< \dots< \omega+\omega=\omega . 2 < \dots< \omega.3 < \dots< \omega . \omega = \omega^2< \dots< \omega^3< \dots< \omega^{\omega}< \dots< \omega^{\omega^{\omega}}< \omega^{\omega^{\dots}}$
+\end{frame}
+\begin{frame}
+\begin{definition}
+For each set $A$, we say $A$ is finite, if there are $n \in \omega$ and a bijection $f:n \longrightarrow A$
+\end{definition}
+\pause
+\begin{definition}
+For each infinte set $A$, we say
+\begin{itemize}
+\item  $A$ is countable, if there is  a bijection $f:\omega \longrightarrow A$
+\item $A$ is uncountable if there is no bijection $f:\omega \longrightarrow A$
+\end{itemize}
+\end{definition}
+\vspace{5mm}
+\begin{center}
+\textbf{{\Large Is there an uncountable set?}}
+\end{center}
+\pause
+\begin{center}
+\textbf{{\Large $\mathcal{P}(\omega)=\{x \colon x  \subseteq \omega\} \sim2^{\omega}= \prescript{\omega}{}{2}=\{f: \omega \longrightarrow 2\}$}}
+\end{center}
+\end{frame}
+\begin{frame}
+\frametitle{CONSISTENCY AND INDEPENDENCE}
+It all started on that day in December 1873 when Georg Cantor established that \textit{\textbf{{\large the continuum is not countable}}}
+\pause
+\begin{theorem}
+There is a bijection $f : \mathcal{P}(\omega) \longrightarrow \mathbb{R}$
+\end{theorem}
+\pause
+\begin{theorem}
+Let $A$ be a set. There is no bijection $f:A \longrightarrow \mathcal{P}(A)$
+\end{theorem}
+\pause
+\begin{corollary}
+\begin{enumerate}
+\item $\mathbb{R}$ is uncountable.\\
+proof: There is no bijection $f: \omega \longrightarrow \mathbb{R}$
+\item There are infinitely many different uncountable.\\
+$\mathcal{P}(\omega), \mathcal{P}(\mathcal{P}(\omega)), \dots $
+\end{enumerate}
+\end{corollary}
+\end{frame}
+\begin{frame}
+\frametitle{The continuum hypothesis}
+$\omega_1$ := the first ordinal $ \alpha$ such that there is no bijection $f:\omega \longrightarrow \alpha$
+\pause
+$\omega_2$ := the first ordinal $ \alpha$ such that there is no bijection $f:\omega_1 \longrightarrow \alpha$
+\pause
+$\omega_3$ := the first ordinal $ \alpha$ such that there is no bijection $f:\omega_2 \longrightarrow \alpha$\\
+$\omega_4, \omega_5, \dots $
+\pause
+$$\aleph_0, \aleph_1, \aleph_3, \dots, \aleph_{\omega}, \aleph_{\omega+1}, \dots $$
+\begin{block}{$c = \aleph_?$}
+$f: \omega_{?} \longrightarrow \mathbb{R}$ is a bijection.
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Naive set theory and Axiomatic set theory}
+\begin{definition}
+A theory $T$ is said to be \textbf{consistent} if it doesn't proof a contradiction.\\
+There is no statement $A$ such that $T \vDash A$, and $T \nvDash \neg A$.
+\end{definition}
+\pause
+\begin{center}
+{\Large  any property $P(x)$ may be used to form a set $x$}
+\end{center}
+\pause
+\begin{center}
+{\Large Let $V$ be the collection of all sets.}
+\end{center}
+\end{frame}
+\begin{frame}
+\begin{center}
+{\Huge ZFC}
+\end{center}
+\pause
+\begin{center}
+{\Large Let $V$ be the collection of all sets.}
+\end{center}
+\pause
+\begin{theorem}
+\begin{enumerate}
+\item if $T$ is syntactically consistent, then $T$ has a model.
+\pause
+\item Doesn't matter how many axiom you are using, there will always be true statements that cannot be proved.
+\pause
+\item If $T$ is consistent, then we can not prove this consistency in $T$.
+\end{enumerate}
+\end{theorem}
+\end{frame}
+\begin{frame}
+\frametitle{consistency of $CH$ and $\neg CH$}
+\begin{center}
+\textbf{G\"{o}del 1939:} \ $Con(ZF) \ implies \ Con(ZFC + CH)$
+\end{center}
+\vspace{5mm}
+
+\begin{center}
+\textbf{Cohen 1963:} \ $Con(ZFC) \ implies \ Con(ZFC + \neg CH)$
+\end{center}
+
+\pause
+\begin{center}
+$$V[G] \models ZFC + c \geq \aleph_2$$
+\end{center}
+\end{frame}
+\begin{frame}
+\frametitle{FORCING}
+\begin{definition}
+$\langle P, \leq \rangle$ is a partial ordered set if for every $p, q, r \in P$:
+\begin{enumerate}
+\item $p \leq p$
+\item $p \leq q$ and $q \leq p$ implies $p=q$
+\item $p \leq q$ and $q \leq r$ implies $p \leq r$
+\end{enumerate}
+\end{definition}
+\pause
+\begin{block}{Forcing Notion}
+Let $V \models ZFC$,\\
+$\mathbb{P}= \langle P, \leq_P \rangle \in V$ a poset with largest element is a forcing notion.
+
+$$Add(\aleph_0, 1)= \{p \colon \omega \longrightarrow 2 \ | \text{p is finite}\}$$
+\end{block}
+$p_1 \leq p_2$ \quad \textbf{{\large or}}\quad $p_1$ extends $p_2$ \quad \textbf{{\large or}}\quad $p_1$ is stronger than $p_2$
+
+\textbf{{\large or}}\quad $p_1$ has more information than $p_2$ \ \textbf{{\large iff}} \ $p_2 \subseteq p_1$
+
+\end{frame}
+\begin{frame}
+\vspace{-2mm}
+\begin{block}{Dense subsets}
+$D \subseteq \mathbb{P}$ is dense if
+ $$\forall p \in \mathbb{P} \exists d \in D (d \leq p)$$
+\end{block}
+Fix $n \in \omega$, let $D_n=\{p \in Add(\aleph_0, 1) \colon n \in dom(p)\}$\\
+\pause
+let $p \in Add(\aleph_0, 1)$ arbitrary,\\
+\pause
+set $q= p \cup \{(n, 0)\}$,\\
+\pause
+clearly $q \leq p$ and $q \in D$.
+\end{frame}
+\begin{frame}
+
+\begin{definition}
+$G \subseteq \mathbb{P}$ is a filter if
+\begin{enumerate}
+\item For all $p, q \in G$, there is $r \in G$ such that $r \leq p$ and $r \leq q$
+\item  If $p \in G$, then all $q \in \mathbb{P}$ with $p \leq q$ are in $G$.
+\end{enumerate}
+\end{definition}
+\pause
+\begin{block}{Generic Set}
+$G$ is Generic if
+\begin{itemize}
+	\item $G \subseteq \mathbb{P}$ is a filter
+	\item $G$ meets every dense subset of $\mathbb{P}$ that lies in $V$
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Magics}
+\begin{theorem}
+If $G \subset Add(\aleph_0, 1)$ is generic, then $G \notin V$ 
+\end{theorem}
+\pause
+\begin{block}{spotlight}
+Note that $G \subset V$\\
+Let $V$ be a (nice)model and $ON$ be the class of all ordinals.\\
+$V \cap ON$ is an ordinal but $V \cap ON \notin V$.
+\end{block}
+\pause
+We can adjoin $G$ to $V$ by an amazing method and get $V[G]$
+\begin{enumerate}
+\item $V[G] \models ZFC$
+\item $V \subseteq V[G]$ and $G\in V[G]$
+\item $V[G] \cap ON=V \cap ON$
+\item If $M$ satisfies $(1)-(3)$, then $V[G] \subseteq M$.
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{more magics}
+\begin{theorem}
+For every formula $\varphi(x_1, \dots, x_n)$ we can find a formula $\varphi'(x_1, \dots, x_n, p, \mathbb{P})$ such that\\
+for every forcing notion $\mathbb{P}$ and every $p \in \mathbb{P}$\\
+$V \models \varphi'(x_1, \dots, x_n,p, \mathbb{P})$ iff for every generic $G \subseteq \mathbb{P}$ with $p \in G$\\
+$V[G] \models \varphi(x_1, \dots, x_n)$
+\end{theorem}
+\end{frame}
+\begin{frame}
+Working in $V[G]$:
+\begin{theorem}
+$\bigcup G : \omega \longrightarrow 2$ is a function in $V[G]$
+\end{theorem}
+\pause
+\begin{theorem}
+For every $f:\omega \longrightarrow 2$ in $V$, $f \neq \bigcup G$
+\end{theorem}
+\pause
+\begin{proof}
+Let $f$ as above,\\
+\pause
+consider the dense set $D_f=\{p \in Add(\aleph_0, 1) \colon \exists n \in dom(p) (p(n) \neq f(n))\}$\\
+\pause
+Since $G$ is generic, so $G \cap D_f \neq \emptyset$\\
+\pause
+hence there exists $n$ such that $\bigcup G (n) \neq f(n)$
+\end{proof}
+\end{frame}
+\begin{frame}
+\frametitle{Cohen forcing}
+$$Add(\aleph_0, \aleph_2)=\{p:(\omega \times \omega_2) \longrightarrow 2 | \text{p is finite}\}$$
+this forcing adds $\aleph_2$ many real.\\
+\begin{block}{}
+Cohen showed that $c^{V[G]} \geq \aleph_2^{V}$
+\end{block}
+\begin{quotation}
+Does $\aleph_2^V=\aleph_2^{V[G]}$?
+\end{quotation}
+\end{frame}
+\begin{frame}
+\begin{center}
+\textbf{{\Huge Thank You}}
+\end{center}
+\end{frame}
+\end{document}
