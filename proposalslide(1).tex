@@ -1,0 +1,355 @@
+\documentclass{beamer}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{yhmath}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{mathalfa}
+\usepackage{upgreek}
+\usepackage{yfonts}
+\usetheme{Warsaw}
+%\usetheme{Madrid}
+%\usetheme{Bergen}
+%\usetheme{AnnArbor}
+%\usetheme{CambridgeUS}\setbeamercovered{dynamic}
+%\usetheme{Hannover}
+%\usetheme{Antibes}
+%\usetheme{Copenhagen}
+%\usetheme{Marburg} 
+\usefonttheme{serif}
+\begin{document}
+\title{Forcing With Elementary Substructures}
+\subtitle{{\small (Side condition forcing)}}
+\author{Rouholah Hoseini Nave}
+%{
+%\setbeamercolor{background canvas}{bg=yellow}
+\begin{frame}
+\maketitle
+\begin{center}
+Supervisors:\\
+Dr Esfandiar Eslami\\
+Dr Mohamad Golshani \\
+\vspace{10mm}
+1401/2/18
+\end{center}
+\end{frame}
+\begin{frame}
+\frametitle{CH  \hspace{103mm}1/14}
+\framesubtitle{consistency and independence}
+It all started on that day in December 1873 when Georg Cantor established that \textit{\textbf{{\large the continuum is not countable}}}
+
+$$|X| < |\mathcal{P}(X)| \qquad \qquad \aleph_0, \aleph_1, \aleph_2, \dots$$
+\pause
+$$c= 2^{\aleph_0} = \aleph_?$$
+$$2^{\aleph_{\alpha}}= \aleph_{\alpha+1}$$
+\pause
+\textbf{G\"{o}del 1939:} \ $Con(ZF) \ implies \ Con(ZFC + GCH)$
+\vspace{5mm}
+
+\textbf{Cohen 1963:} $ Con(ZF) \ implies \ Con(ZF + \neg AC)$
+
+\hspace{25.5mm}$Con(ZFC) \ implies \ Con(ZFC + \neg CH)$
+$$V[G] \models ZFC + 2^{\aleph_0}\geq \aleph_2$$
+\end{frame}
+\begin{frame}
+\frametitle{FORCING \hspace{87mm}2/14}
+\framesubtitle{Objects}
+\begin{block}{Forcing Notion}
+$\mathbb{P}= \langle P, \leq_P \rangle \in V$ a poset of \textbf{conditions} with largest element
+
+\hspace{20mm}$Add(\aleph_0, \aleph_2)= \{p \vdots (\omega \times \omega_2) \longrightarrow 2 \ | \ |p| < \aleph_0\}$
+
+$p_1 \leq p_2$ \quad \textbf{{\large or}}\quad $p_1$ extends $p_2$ \quad \textbf{{\large or}}\quad $p_1$ is stronger than $p_2$
+
+\textbf{{\large or}}\quad $p_1$ has more information than $p_2$ \ \textbf{{\large iff}} \ $p_2 \subseteq p_1$
+\end{block}
+\vspace{-2mm}
+\begin{block}{Dense Open subsets}
+$D \subseteq \mathbb{P}$ is dense open if
+\begin{itemize}
+\item $\forall p \in \mathbb{P} \exists d \in D (d \leq p)$
+\item $d_1 \in D \land d_2 \leq d_1 \Rightarrow d_2 \in D$
+\end{itemize}
+\end{block}
+\vspace{-2mm}
+\begin{block}{Generic Set}
+$G$ is Generic if
+\begin{itemize}
+	\item $G \subseteq \mathbb{P}$ is a filter
+	\item $G$ meets every dense open subset of $\mathbb{P}$ that lies in $V$
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{FORCING \hspace{87mm}3/14}
+\framesubtitle{Generic Extension}
+\begin{block}{$V^{\mathbb{P}}$ the class of $\mathbb{P}$-names}
+$\tau \in V^{\mathbb{P}} \iff \tau \ \text{is a relation and} \ \forall \langle \sigma, p \rangle \in \tau (\sigma \in V^{\mathbb{P}} \land p \in \mathbb{P})$
+\end{block}
+\begin{itemize}
+\item $V^{\mathbb{P}} \subset V$
+\item $G \notin V$
+\end{itemize}
+\begin{block}{$V[G]$ the generic extension}
+$\tau[G]=\{ \sigma[G] : \ \langle \sigma, p \rangle \in \tau \ \exists p \in G\}$
+
+$V[G]= \{\tau[G] : \ \tau \in V^{\mathbb{P}}\}$
+\end{block}
+\pause
+\begin{itemize}
+\item $V[G]$ is the minimal \textbf{{\large model}} that includes $V \cup \{G\}$ and $V \cap Ord = V[G] \cap Ord$
+\item $\forall \varphi (V[G] \models \varphi \iff \exists p \in G(p \Vdash \varphi))$
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{SOME DIFFICULTIES \hspace{59mm}4/14}
+\framesubtitle{preserving cardinals and GCH}
+Cohen showed that $(2^{\aleph_0})^{V[G]} \geq \aleph_2^{V}$
+
+Does $\aleph_2^{V} = \aleph_2^{V[G]}$?
+\pause
+\begin{block}{Chain condition}
+$\mathbb{P}$ is $\kappa.c.c.$ if every maximal antichain $A \subseteq \mathbb{P}$ has size $<\kappa$
+
+\textbf{Cohen: If $\mathbb{P}$ is $\kappa.c.c.$ then forcing with $\mathbb{P}$ preserves cardinals $\geq \kappa$.}
+\end{block}
+\pause
+\begin{block}{$\kappa$-closed}
+$\mathbb{P}$ is $\kappa$-closed if for every $\lambda < \kappa$, every descending sequence $\langle p_{\alpha} : \alpha < \lambda \rangle$ of conditions of $\mathbb{P}$ has a lower bound.
+
+\textbf{Solovay: If $\mathbb{P}$ is $\kappa$-closed then forcing with $\mathbb{P}$ preserves cardinals $\leq \kappa$}
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{$\aleph_1$-PRESERVING FORCINGS \hspace{43.5mm}5/14}
+\begin{block}{Axiom A Forcings}
+A class of $\aleph_1$ preserving forcing notions that contains $\aleph_1.c.c.$ and $\aleph_1$-closed forcing notions introduced by Baumgartner
+\end{block}
+\textbf{Recall: }Let $X$ be a set and $\kappa \leq |X|$ a cardinal
+$$[X]^{\kappa}=\{Y \subseteq X \ | \ |Y|= \kappa\}$$
+\begin{block}{Proper Forcings}
+A forcing notion $\mathbb{P}$ is proper if for every infinite $X$ and every stationary set $S \subseteq [X]^{\leq \aleph_0}$, $S$ remains stationary in $V[G]$
+\begin{itemize}
+\item \textbf{Shelah: If $\mathbb{P}$ is proper then forcing with $\mathbb{P}$ preserves $\aleph_1$}
+\item Axiom A forcings are proper
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{SOME REMINDERS \hspace{64mm}6/14}
+\framesubtitle{Elementary Submodels}
+Let $\theta$ be a regular uncountable cardinal
+\begin{itemize}
+\item $H(\theta)=\{x: \ |TC(x)| < \theta \}$\\
+\hspace{9mm}$=\{x: \ x \subseteq y \ \exists y(y \ \text{is transitive} \land |y| < \theta)\}$
+\item $\langle H(\theta), \in \rangle \models ZFC-P$
+\item If $\theta$ is inaccessible cardinal then $\langle H(\theta), \in \rangle \models ZFC$
+\end{itemize}
+\begin{block}{Elementary substructures}
+$\mathfrak{A} \prec \mathfrak{B}$ iff $\mathfrak{A} \subseteq \mathfrak{B}$ and for all formulas $\varphi[x_1, \dots, x_n]$ of $\mathscr{L}$ and all $a_1, \dots, a_n \in A$, we have
+$$\mathfrak{A}\models \varphi[a_1, \dots, a_n] \iff \mathfrak{B}\models \varphi[a_1, \dots, a_n]$$
+\end{block}
+Let $\mathfrak{B}$ be a model of power $\alpha$, let $|\mathscr{L}| \leq \beta \leq \alpha$, let $X \subseteq B$ and $|X| \leq \beta$ Then $\mathfrak{B}$ has an elementary submodel of power $\beta$ which contains $X$
+\end{frame}
+\begin{frame}
+\frametitle{PROPERNESS \hspace{76.8mm}7/14}
+\framesubtitle{A Characterisation}
+Let $\theta$ be a large enough regular cardinal, $\mathbb{P}$ a forcing notion and $\langle N, \in, \leq_w \rangle \prec \langle H(\theta), \in, \leq_w \rangle $ countable with $\mathbb{P} \in N $
+\begin{block}{Generic Conditions}
+$q \in \mathbb{P}$ is an $(N, \mathbb{P})$-generic condition if for every dense open set $D \subseteq \mathbb{P}$, $D \in N$ implies $D \cap N$ is predense below $q$. i.e.
+$$q' \leq q \longrightarrow \exists d \in D \cap N \ \exists p \in \mathbb{P}(p \leq q', d)$$
+\end{block}
+\begin{block}{}
+$\mathbb{P}$ is proper iff for all such $N$, every $p \in \mathbb{P} \cap N$ has an $(N, \mathbb{P})$-generic extension
+\end{block}
+$q \in \mathbb{P}$ is $(N, \mathbb{P})$-strongly generic condition if every dense open set $D \subseteq \mathbb{P} \cap N$ is predense below $q$
+\end{frame}
+\begin{frame}
+\frametitle{THE $\in$-COLLAPSE FORCING \hspace{41.5mm}8/14}
+\framesubtitle{Todorcevic $1984$}
+\vspace{-2mm}
+\begin{block}{}
+$\mathbb{P}_{\in}(\theta)$ is the set of all finite $\in$-chains of countable elementary submodels of $\langle H(\theta), \in, \leq_w \rangle $ with the inverse inclusion as the order
+\end{block}
+\pause
+Let $\kappa > \theta$ be a large enough regular cardinal and $\langle M', \in, <_w \rangle \prec \langle H(\kappa), \in, <_w \rangle$ with $\theta \in M'$ and $M=M' \cap H(\theta)$
+\begin{itemize}
+\item If $M \in q$, then $q \cap M' \in \mathbb{P}_{\in}(\theta) \cap M'$
+\item If $p \in \mathbb{P}_{\in}(\theta) \cap M'$, then	$p \cup \{M\} \in \mathbb{P}_{\in}(\theta)$.
+\end{itemize}
+\pause
+\begin{block}{$PFA$}
+For every proper forcing $\mathbb{P}$ and for every family $\{D_{\alpha} \ : \ \alpha \in \omega_1\}$ of dense sets of $\mathbb{P}$, there is a filter $G \subseteq \mathbb{P}$ such that $G \cap D_{\alpha} \neq \emptyset$ for all $\alpha \in \omega_1$
+\end{block}
+\pause
+\begin{block}{Applications}
+ $PFA$ implies $OGA, PID, BA(\omega_1)$
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{THE $\in$-COLLAPSE FORCING \hspace{41mm}9/14}
+\framesubtitle{As Side Condition}
+$\mathbb{P}=\{p:\alpha \longrightarrow \omega_1 \ | \ \alpha \subset \omega_1 \text{is finite} \}$ with inverse inclusion
+\begin{itemize}
+\item $\mathbb{P}$ is not $\aleph_1.c.c.$
+\item It collapses $\aleph_1$
+\item we can not prove its properness
+\end{itemize}
+\begin{block}{}
+Let $M \cap \omega_1 = \delta$, $\alpha \in M \backslash dom(p)$ and $q(a) > \delta$, then the natural restriction of $q$ to $M$ as a function is not in $M$
+\end{block}
+\pause
+\begin{block}{Side conditions}
+$\mathbb{P}'=\{(p, \mathcal{N}) : \ p \in \mathbb{P} \land \mathcal{N} \in \mathbb{P}_{\in}(\theta)\}$ such that
+$$ \forall N \in \mathcal{N} \ \forall \alpha \in dom(p) \cap N \ (p(\alpha) \in N)$$
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{MORE DIFICULTIES \hspace{59mm}10/14}
+\begin{block}{Gitik's question $(2017)$}
+Suppose $GCH$ holds and $\kappa$ is a regular cardinal. Is there a cardinal and $GCH$ preserving extension of the universe in which there exists a set $A \subseteq \kappa$ of size $\kappa$ such that for all countable set $X \in \mathscr{P}(\kappa) \cap V$, $A \cap X$ and $X\backslash A$ are non-empty?
+\end{block}
+\pause
+\begin{block}{$\kappa= \aleph_0$}
+$\mathbb{P}_{\omega} = \{p:\omega \longrightarrow 2 \ | |p| < \aleph_0 \ \}$
+\end{block}
+\begin{block}{$\kappa= \aleph_1$}
+$\mathbb{P}_{\omega_1} = \{p:\omega_1 \longrightarrow 2 \ | |p| < \aleph_0 \ \}$
+\end{block}
+$\mathbb{P}_{\omega_2} \simeq Add(\aleph_0, \aleph_2)$ Hence $2^{\aleph_0}> \aleph_1$ and $GCH$ fails
+\end{frame}
+\begin{frame}
+\frametitle{MATRIX $\in$-COLLAPSE FORCING \hspace{29mm}11/14}
+\framesubtitle{Todorcevic $2017$}
+\vspace{-5mm}
+$$\mathcal{S}= \{M \in [H(\theta)]^{\aleph_0} : \langle M, \in, <_w \rangle \prec \langle H(\theta), \in, <_w \rangle \}$$
+\vspace{-6mm}
+\begin{block}{}
+$\mathbb{P}_{\in}^{\mathcal{M}}= \{p \subset \mathcal{S} \ | \ |p| < \aleph_0 \}$ such that
+\begin{itemize}
+\item If $M, N \in p$ and $M \cap \omega_1 = \delta_M = \delta_N = N \cap \omega_1$, then $\langle M, \in, <_w \rangle \simeq \langle N, \in, <_w \rangle$
+\item If $M \in p$ and $\delta \in dom(p)$ such that $\delta_M < \delta$, then $ \exists N \in p(\delta) \ (M \in N)$.
+
+where $p(\alpha)=\{ M \in p : \delta_M=\alpha\}$ and $dom(p)= \{\alpha: p(\alpha) \neq \emptyset\}$.
+\end{itemize}
+\end{block}
+\pause
+\vspace{-2mm}
+\begin{block}{Aplication}
+\begin{itemize}
+\item $\mathbb{P}_{\in}^{\mathcal{M}}$ is strongly proper and forces the Continuum Hypothesis
+\item In $V[G]$ there is a Kurepa tree with exactly $\omega_2$ branches that does not contain Aronszajn subtrees
+\item (We solved) the Gitik's question for $\kappa = \aleph_2$
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{SEQUENCES OF MODELS OF TWO TYPES \hspace{5mm}12/14}
+\framesubtitle{Neeman $2017$}
+$\kappa < \lambda < \theta$
+\begin{itemize}
+\item $\mathcal{T}$ is a collection of transitive $\langle W, \in, <_w \rangle \prec \langle H(\theta), \in, <_w \rangle$, and $\mathcal{S}$ is a collection of $\langle M, \in, <_w \rangle \prec \langle H(\theta), \in, <_w \rangle$ with $\kappa \subset M$ and $|M| < \lambda$. All elements of $\mathcal{S} \cup \mathcal{T}$ belong to $H(\theta)$ and contain $\{\kappa, \lambda\}$
+\item If $M_1, M_2 \in \mathcal{S}$ and $M_1 \in M_2$ then $M_1 \subset M_2$
+\item If $M \in \mathcal{S}$ and $W \in M \cap \mathcal{T}$ then $(M \cap W) \in W \cap \mathcal{S}$
+\item Each $W \in \mathcal{T}$ is closed under sequences of lenght $\leq \kappa$ in $H(\theta)$
+\end{itemize}
+\begin{block}{}
+$\mathbb{P}_{\kappa, \lambda}^{\mathcal{S}, \mathcal{T}}= \{ \langle M_{\xi} : \xi < \gamma \rangle \in H(\theta) \ | \gamma < \kappa \}$
+such that
+\begin{itemize}
+\item $\forall\xi$, $M_{\xi} \in \mathcal{S} \cup \mathcal{T}$
+\item $\forall \zeta < \gamma$, $\{\xi < \zeta : M_{\xi} \in M_{\zeta}\}$ is cofinal in $\zeta$
+\item $\forall \zeta < \gamma$, $\langle M_{\xi} : \xi < \zeta \land M_{\xi} \in M_{\zeta} \rangle \in M_{\zeta}$
+\item The sequence is closed under intersections
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{TWO APPLICATIONS \hspace{56mm}13/14}
+$\mathcal{S}= \{M \in [H(\theta)]^{\aleph_0} : \langle M, \in, <_w \rangle \prec \langle H(\theta), \in, <_w \rangle \}$
+
+$\mathcal{T}= \{H(\lambda) : \langle H(\lambda), \in, <_w \rangle \prec \langle H(\theta), \in, <_w \rangle \land cf(\lambda) > \omega \}$
+\begin{block}{1}
+$\mathbb{P}_{\in}^{\mathcal{S}, \mathcal{T}}$ preserves $\aleph_1$
+
+If $\lambda$ be a cardinal such that $\omega_1 < \lambda < \theta$, collapsed to $\omega_1$
+
+If $\mathcal{T}$ is stationary set on $[H(\theta)]^{<\theta}$ then $\mathbb{P}_{\in}^{\mathcal{S}, \mathcal{T}} \Vdash \theta=\omega_2$
+\end{block}
+\pause
+\vspace{-2mm}
+\begin{block}{2}
+Let $\theta$ a Supercompact cardinal and $J: \theta \longrightarrow H(\theta)$ Laver function
+
+$\mathbb{P}_{\in}^{\mathcal{S}, \mathcal{T}}(J)$ is an iterated forcing, constructed using $\mathbb{P}_{\in}^{\mathcal{S}, \mathcal{T}}$
+
+preserves $\aleph_1$
+
+forces that $\theta = \aleph_2$
+
+Get new proof for the consistency of $PFA$
+
+$V[G]$ is a model of $PFA$ in which $PFA^+$ fails
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{THE QUESTIONS \hspace{66.5mm}14/14}
+\begin{block}{The Problem}
+The forcing of Neeman preserves cardinals but does not preserve $GCH$
+\end{block}
+\pause
+\begin{block}{The Idea}
+Replacing the linear parts of small nodes with matrices of the same type of models
+\end{block}
+\pause
+Let
+\vspace{-5mm}
+$$\mathcal{S}= \{M \in [H(\omega_2)]^{\aleph_0} : \langle M, \in, <_w \rangle \prec \langle H(\omega_2), \in, <_w \rangle \}$$
+$$\mathcal{T}= \{X \in [H(\omega_2)]^{\aleph_1} : \langle X, \in, <_w \rangle \prec \langle H(\omega_2), \in, <_w \rangle \land \prescript{\omega}{}{X} \subset X \}$$
+\vspace{-5mm}
+\begin{itemize}
+\item Is there a cardinal and $GCH$ preserving forcing notion $\mathbb{P}_{\in, \mathcal{M}}^{\mathcal{S}, \mathcal{T}}$?
+\item Can we iterete such a forcing preserving $GCH$?
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{REFRENCES (Papers by date)}
+\begin{thebibliography}{99}
+\bibitem{matrices} Todorčević S., Kuzeljevic and Borisa, Forcing with matrices of countable elementary submodels, Proceedings of the American Mathematical Society 145(5), 2211-2222, 2017
+\bibitem{adequateside} Krueger J., Forcing with adequate sets of models as side conditions, Mathematical Logic Quarterly 63(1), 124-149, 2017
+\bibitem{neeman} Neeman I., Forcing with sequences of models of two types, Notre Dame Journal of Formal Logic 55(2), 265-298, 2014
+\bibitem{sadequate} Krueger J., Strongly adequate sets and adding a club with finite conditions, Archive for Mathematical Logic 53(1), 119-136, 2014
+\bibitem{Mitchell} Mitchell W. J., Adding Closed Unbounded Subsets of $\omega_2$ with Finite Forcing, Notre Dame Journal of Formal Logic 46(3), 357-371, 2005
+\end{thebibliography}
+\end{frame}
+\begin{frame}
+\frametitle{REFRENCES (Papers by date)}
+\begin{thebibliography}{99}
+\bibitem{koszmidier} Koszmider P., Models as side conditions, Set theory, Springer, Dordrecht, 99-107, 1998
+\bibitem{prelation} Todorčević S., Partition relations for partially ordered sets, Acta Mathematica 155, 1-25, 1985
+\bibitem{directed} Todorčević S., Directed sets and cofinal types, Transactions of the American Mathematical Society 290(2), 711-723, 1985
+\bibitem{noteproper} Todorčević S., A note on the proper forcing axiom, Contemporary Mathematics 95, 209-218, 1984
+\bibitem{axioma} Baumgartner J., Iterated forcing, Surveys in set theory, 1-59, 1983
+\bibitem{pideal} Todorčević S., Guzmán and Osvaldo, The P-Ideal Dichotomy, Martin’s Axiom and Entangled Sets
+\end{thebibliography}
+\end{frame}
+\begin{frame}
+\frametitle{REFRENCES (Books by date)}
+\begin{thebibliography}{99}
+\bibitem{proper} Shelah S., Proper and improper forcing, 2nd ed., Perspectives in Mathematical Logic, Springer-Verlag, Berlin, 1998.
+\bibitem{kunen} Kunen K., Set theory an introduction to independence proofs, Elsevier, 2014
+\bibitem{kanamori} Foreman M. and Kanamori A., Handbook of Set Theory, Germany, Springer Netherlands, 2010
+\bibitem{jech} Jech T., Set theory: The Third Millennium Edition, Springer, 2003
+\bibitem{chang} Chang C. C., and Keisler H. J., Model theory, Elsevier, 1990
+\bibitem{pproblem} Todorčević S., Partition problems in topology, Vol. 84, American Mathematical Soc., 1989
+\end{thebibliography}
+\end{frame}
+\begin{frame}
+\begin{center}
+\textbf{{\Huge Thank You}}
+\end{center}
+\end{frame}
+%}
+\end{document}
