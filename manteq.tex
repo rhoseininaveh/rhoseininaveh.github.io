@@ -1,0 +1,193 @@
+\documentclass{beamer}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{yhmath}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{mathalfa}
+\usepackage{upgreek}
+\usepackage{yfonts}
+\usetheme{Warsaw}
+%\usetheme{Madrid}
+%\usetheme{Bergen}
+%\usetheme{AnnArbor}
+%\usetheme{CambridgeUS}\setbeamercovered{dynamic}
+%\usetheme{Hannover}
+%\usetheme{Antibes}
+%\usetheme{Copenhagen}
+%\usetheme{Marburg} 
+\usefonttheme{serif}
+\begin{document}
+\title{Adding Highly Generic Subsets of $\omega_2$}
+
+\author{Rouholah Hoseini Naveh}
+%{
+%\setbeamercolor{background canvas}{bg=yellow}
+\begin{frame}
+\date{}
+\maketitle
+
+\begin{center}
+Joint work with:\\
+Dr Esfandiar Eslami\\
+Dr Mohammad Golshani\\
+\vspace{10mm}
+1401/12/3
+\end{center}
+\end{frame}
+\begin{frame}
+\frametitle{CONSISTENCY AND INDEPENDENCE}
+It all started on that day in December 1873 when Georg Cantor established that \textit{\textbf{{\large the continuum is not countable}}}
+
+$$|X| < |\mathcal{P}(X)| \qquad \qquad \aleph_0, \aleph_1, \aleph_2, \dots$$
+\pause
+$$c= 2^{\aleph_0} = \aleph_?$$
+$$2^{\aleph_{\alpha}}= \aleph_{\alpha+1}$$
+\pause
+\textbf{G\"{o}del 1939:} \ $Con(ZF) \ implies \ Con(ZFC + GCH)$
+\vspace{5mm}
+
+\textbf{Cohen 1963:} $ Con(ZF) \ implies \ Con(ZF + \neg AC)$
+
+\hspace{25.5mm}$Con(ZFC) \ implies \ Con(ZFC + \neg CH)$
+$$V[G] \models ZFC + 2^{\aleph_0}\geq \aleph_2$$
+\end{frame}
+\begin{frame}
+\frametitle{FORCING}
+\begin{block}{Forcing Notion}
+$\mathbb{P}= \langle P, \leq_P \rangle \in V$ a poset of \textbf{conditions} with largest element
+
+\hspace{20mm}$Add(\aleph_0, \aleph_2)= \{p \vdots (\omega \times \omega_2) \longrightarrow 2 \ | \ |p| < \aleph_0\}$
+
+$p_1 \leq p_2$ \quad \textbf{{\large or}}\quad $p_1$ extends $p_2$ \quad \textbf{{\large or}}\quad $p_1$ is stronger than $p_2$
+
+\textbf{{\large or}}\quad $p_1$ has more information than $p_2$ \ \textbf{{\large iff}} \ $p_2 \subseteq p_1$
+\end{block}
+\vspace{-2mm}
+\begin{block}{Dense Open subsets}
+$D \subseteq \mathbb{P}$ is dense open if
+\begin{itemize}
+\item $\forall p \in \mathbb{P} \exists d \in D (d \leq p)$
+\item $d_1 \in D \land d_2 \leq d_1 \Rightarrow d_2 \in D$
+\end{itemize}
+\end{block}
+\vspace{-2mm}
+\begin{block}{Generic Set}
+$G$ is Generic if
+\begin{itemize}
+	\item $G \subseteq \mathbb{P}$ is a filter
+	\item $G$ meets every dense open subset of $\mathbb{P}$ that lies in $V$
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{PRESERVING CARDINALS AND THE GCH}
+Cohen showed that $(2^{\aleph_0})^{V[G]} \geq \aleph_2^{V}$
+
+Does $\aleph_2^{V} = \aleph_2^{V[G]}$?
+\pause
+\begin{block}{Chain condition}
+$\mathbb{P}$ is $\kappa.c.c.$ if every maximal antichain $A \subseteq \mathbb{P}$ has size $<\kappa$
+
+\textbf{Cohen: If $\mathbb{P}$ is $\kappa.c.c.$ then forcing with $\mathbb{P}$ preserves cardinals $\geq \kappa$.}
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{$\aleph_1$-PRESERVING FORCINGS}
+\textbf{Recall: }Let $X$ be a set and $\kappa \leq |X|$ a cardinal
+$$[X]^{\kappa}=\{Y \subseteq X \ | \ |Y|= \kappa\}$$
+\begin{block}{Proper Forcings}
+A forcing notion $\mathbb{P}$ is proper if for every infinite $X$ and every stationary set $S \subseteq [X]^{\leq \aleph_0}$, $S$ remains stationary in $V[G]$
+\begin{itemize}
+\item \textbf{Shelah: If $\mathbb{P}$ is proper then forcing with $\mathbb{P}$ preserves $\aleph_1$}
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{ELEMENTARY SUBSTRUCTURES}
+Let $\theta$ be a regular uncountable cardinal
+\begin{itemize}
+\item $H(\theta)=\{x: \ |TC(x)| < \theta \}$\\
+\hspace{9mm}$=\{x: \ x \subseteq y \ \exists y(y \ \text{is transitive} \land |y| < \theta)\}$
+\item $\langle H(\theta), \in \rangle \models ZFC-P$
+\item If $\theta$ is inaccessible cardinal then $\langle H(\theta), \in \rangle \models ZFC$
+\end{itemize}
+\begin{block}{Elementary substructures}
+$\mathfrak{A} \prec \mathfrak{B}$ iff $\mathfrak{A} \subseteq \mathfrak{B}$ and for all formulas $\varphi[x_1, \dots, x_n]$ of $\mathscr{L}$ and all $a_1, \dots, a_n \in A$, we have
+$$\mathfrak{A}\models \varphi[a_1, \dots, a_n] \iff \mathfrak{B}\models \varphi[a_1, \dots, a_n]$$
+\end{block}
+Let $\mathfrak{B}$ be a model of power $\alpha$, let $|\mathscr{L}| \leq \beta \leq \alpha$, let $X \subseteq B$ and $|X| \leq \beta$ Then $\mathfrak{B}$ has an elementary submodel of power $\beta$ which contains $X$
+\end{frame}
+\begin{frame}
+\frametitle{FORCING WITH ELEMENTARY SUBSTRUCTURES}
+$$\mathcal{S}= \{M \in [H(\theta)]^{\aleph_0} : \langle M, \in, <_w \rangle \prec \langle H(\theta), \in, <_w \rangle \}$$
+\vspace{-2mm}
+\begin{block}{THE $\in$-COLLAPSE FORCING}
+$\mathbb{P}_{\in}(\theta)$ is the set of all finite $\in$-chains of countable elementary submodels of $\langle H(\theta), \in, \leq_w \rangle $ with the inverse inclusion as the order
+\end{block}
+\begin{block}{MATRIX $\in$-COLLAPSE FORCING}
+$\mathbb{P}_{\in}^{\mathcal{M}}= \{p \subset \mathcal{S} \ | \ |p| < \aleph_0 \}$ such that
+\begin{itemize}
+\item If $M, N \in p$ and $M \cap \omega_1 = \delta_M = \delta_N = N \cap \omega_1$, then $\langle M, \in, <_w \rangle \simeq \langle N, \in, <_w \rangle$
+\item If $M \in p$ and $\delta \in dom(p)$ such that $\delta_M < \delta$, then $ \exists N \in p(\delta) \ (M \in N)$.
+
+where $p(\alpha)=\{ M \in p : \delta_M=\alpha\}$ and $dom(p)= \{\alpha: p(\alpha) \neq \emptyset\}$.
+\end{itemize}
+\end{block}
+
+\end{frame}
+\begin{frame}
+\frametitle{GITIK'S QUESTION $(2017)$}
+
+Suppose $GCH$ holds and $\kappa$ is a regular cardinal. Is there a cardinal and $GCH$ preserving extension of the universe in which there exists a set $A \subseteq \kappa$ of size $\kappa$ such that for all countable set $X \in \mathscr{P}(\kappa) \cap V$, $A \cap X$ and $X\backslash A$ are non-empty?
+\pause
+\begin{block}{$\kappa= \aleph_0$}
+$\mathbb{P}_{\omega} = \{p:\omega \longrightarrow 2 \ | |p| < \aleph_0 \ \}$
+\end{block}
+\begin{block}{$\kappa= \aleph_1$}
+$\mathbb{P}_{\omega_1} = \{p:\omega_1 \longrightarrow 2 \ | |p| < \aleph_0 \ \}$
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{DENSITY ARGUMENT}
+\begin{block}{}
+ $D_X= \{p \in \mathbb{P}: \exists \alpha, \beta \in X \cap dom(p) \big(p(\alpha)=1 \land p(\beta)=0 \big) \}$. 
+\end{block}
+\begin{block}{}
+If $p \in G \cap D_X$ and $\alpha, \beta \in X \cap dom(p)$ be such that $p(\alpha)=1$ and $p(\beta)=0 $, then $\alpha \in X \cap A$ and $\beta \in X \setminus A$
+\end{block}
+\pause
+\begin{block}{THE PROBLEM}
+$\mathbb{P}_{\omega_2} \simeq Add(\aleph_0, \aleph_2)$ Hence $2^{\aleph_0}> \aleph_1$ and $GCH$ fails
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{THE FORCING NOTION}
+\begin{definition}
+A condition $p$ of $\mathbb{P}$ is a pair $\langle \mathcal{M}_p, f_p \rangle$, whenever:
+\begin{itemize}
+\item[$(i)$] $\mathcal{M}_p \in \mathbb{P}_{\in}^M$;
+\item[$(ii)$] $f_p: \omega_2 \longrightarrow 2$ is a finite partial function;
+\item[$(iii)$] If $M,N \in \mathcal{M}_p$ with $\delta_M=\delta_N$, then
+ \begin{itemize}
+\item $\alpha \in (dom(f_p) \cap M) \Rightarrow \varphi_{M,N}(\alpha) \in dom(f_p)$,
+\item for each $\alpha$ as above, $f_p(\varphi_{M,N}(\alpha))=f_p(\alpha)$.
+\end{itemize}
+\end{itemize}
+For $p, q \in \mathbb{P}$, we say $p \leq q$ if and only if $\mathcal{M}_q \subseteq \mathcal{M}_p$ and $f_q \subseteq f_p$.
+\end{definition}
+\begin{lemma}
+$\mathbb{P}$ is strongly proper and satisfies the $\aleph_2$-c.c
+\end{lemma}
+\begin{lemma}
+Forcing with $\mathbb{P}$ preserves the $CH$.
+\end{lemma}
+\end{frame}
+\begin{frame}
+\begin{center}
+\textbf{{\Huge Thank You}}
+\end{center}
+\end{frame}
+\end{document}
