@@ -1,0 +1,642 @@
+\documentclass{beamer}
+\usetheme{Warsaw}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{yhmath}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{mathalfa}
+\usepackage{upgreek}
+\usepackage{yfonts}
+\usepackage{dsfont}
+\usepackage{accents}
+%\usetheme{Singapore}
+%\usetheme{Madrid}
+%\usetheme{Bergen}
+%\usetheme{AnnArbor}
+%\usetheme{CambridgeUS}\setbeamercovered{dynamic}
+%\usetheme{Hannover}
+%\usetheme{Antibes}
+%\usetheme{Copenhagen}
+%\usetheme{Marburg} 
+\usefonttheme{serif}
+\newcommand{\cf}[1]{\rm{cof}(#1)}
+\newcommand{\dom}[1]{{\rm{dom}}(#1)}
+\newcommand{\on}{{\rm{ON}}}
+\newcommand{\ac}{{\rm{AC}}}
+\newcommand{\sh}{{\rm{SH}}}
+\newcommand{\ctm}{\rm{ctm}}
+\newcommand{\p}{\mathds{P}}
+\newcommand{\q}{\mathds{Q}}
+\newcommand{\rr}{\mathds{R}}
+\newcommand{\pqt}[1]{\p_{#1}*\undertilde{\q}_{#1}}
+\newcommand{\qt}{\undertilde{\q}}
+\newcommand{\ipp}{\p_{\beta}*\undertilde{\p}_{\beta\alpha}}
+\newcommand{\zfc}{\rm{ZFC}}
+\newcommand{\zf}{\rm{ZF}}
+\newcommand{\gch}{\rm{GCH}}
+\newcommand{\ch}{\rm{CH}}
+\newcommand{\cc}{{\rm{-c.c}}}
+\newcommand{\rank}[1]{{\rm{rank}}(#1)}
+\newcommand{\op}[2]{\langle #1, #2 \rangle}
+\newcommand{\ran}[1]{{\rm{rng}}(#1)}
+\newcommand{\ps}[2]{{\mathcal{P}^{#2}(#1)}}
+\newcommand{\prg}[1]{#1[G]}
+\newcommand{\prh}[1]{#1[H]}
+\newcommand{\pr}[2]{#1[#2]}
+\newcommand{\otp}[1]{{\rm{otp}}(#1)}
+\newcommand{\col}[2]{{\rm{Col}}(#1, #2)}
+\newcommand{\add}[2]{{\rm{Add}}(#1, #2)}
+\newcommand{\pq}{\p\times\q}
+\newcommand{\gh}{G\times H}
+\newcommand{\mpn}{M^{\p}}
+\newcommand{\vpn}{V^{\p}}
+\newcommand{\ipq}{\p*\undertilde{\q}}
+\newcommand{\iop}[2]{\langle #1, \undertilde{#2} \rangle}
+\newcommand{\supp}[1]{{\rm{supp}}(#1)}
+\newcommand{\res}[2]{#1{\restriction}#2}
+\newcommand{\for}[2]{\varphi({#1}_1, \dots, {#1}_{#2})}
+\newcommand{\forp}[3]{\varphi(\pr{{#1}_1}{#3}, \dots, \pr{{#1}_{#2}}{#3})}
+\newcommand{\forr}[3]{\varphi(#1, {#2}_1, \dots, {#2}_{#3})}
+\newcommand{\forrp}[4]{\varphi(\pr{#1}{#4}, \pr{{#2}_1}{#4}, \dots, \pr{{#2}_{#3}}{#4})}
+\newcommand{\forrr}[4]{\varphi(#1, #2, {#3}_1, \dots, {#3}_{#4})}
+\newcommand{\forrrp}[5]{\varphi(\pr{#1}{#5}, \pr{#2}{#5}, \pr{{#3}_1}{#5}, \dots, \pr{{#3}_{#4}}{#5})}
+\newcommand{\seq}[2]{{#1}_1, \dots, {#1}_{#2}}
+\newcommand{\el}[1]{\mathcal{E}_{\aleph_0, #1}}
+\newcommand{\pim}{\p_{\in}^{\mathcal{M}}}
+\begin{document}
+\title{\textbf{Forcing With Elementary Substructures}}
+\subtitle{(Side Condition Forcing)}
+\author{\textbf{Rouholah Hoseini Naveh}}
+%{
+%\setbeamercolor{background canvas}{bg=yellow}
+\begin{frame}
+\date{July 2024}
+\maketitle
+\begin{center}
+\textbf{{\large Supervisors:\\}}
+Dr. Esfandiar Eslami\\
+Dr. Mohammad Golshani \\
+\end{center}
+\begin{center}
+\textbf{Issac Newton: ``If I have seen further, it is by standing on the shoulders of giants"}
+\end{center}
+\end{frame}
+\begin{frame}
+\frametitle{$(1/21)$\hspace{20mm} We aim to$\dots$}
+\begin{enumerate}
+\item
+{\large
+Answer a question of Gitik (2017) regarding the \textbf{addition of highly generic subsets} of $\omega_2$ while preserving cardinals and the $\gch$
+}
+\pause
+\vspace{10mm}
+\item
+{\large
+Introduce a generalization of Abraham’s forcing (1983) for \textbf{adding a club} (1976–2014) and provide a \textbf{new proof} for a theorem of Shelah
+}
+\end{enumerate}
+\pause
+\begin{center}
+{\large \textbf{Using Forcing by Side Conditions}}
+\end{center}
+\end{frame}
+\begin{frame}
+\frametitle{$(2/21)$ \hspace{15mm}Elementary Substructures}
+\begin{center}
+{\Huge $\langle V, \in, \unlhd, \dots \rangle \models \zfc$}
+\end{center}
+\pause
+\begin{definition}
+$M \prec V$ if and only if 
+\begin{enumerate}
+\item
+$M \subseteq V$
+\item
+$\forall \for{v}{n}\forall \seq{a}{n} \in M$
+$$M \models \for{a}{n} \iff V \models \for{a}{n}$$
+\end{enumerate}
+\end{definition}
+\pause
+\begin{lemma}
+Let $V\models \zfc$ and $\kappa \leq |V| $ infinite cardinal
+
+$\forall X \subseteq V$ with $|X| \leq \kappa$ $\exists M\prec V$ s.t. 
+\begin{enumerate}
+\item
+$|M|=\kappa$
+\item 
+$X \subseteq M$
+\end{enumerate}
+\end{lemma}
+\end{frame}
+\begin{frame}
+\frametitle{$(3/21)$ \hspace{20mm} Some Notations}
+\begin{alertblock}{I}
+trcl$(x)$ is the least transitive $y\supseteq x$
+\end{alertblock}
+\pause
+\begin{block}{II}
+$H_{\theta}=\lbrace x \colon | \text{trcl}(x)|<\theta\rbrace$
+\end{block}
+\pause
+\begin{alertblock}{III}
+$[x]^{\kappa}=\lbrace y \subseteq x \colon |y|=\kappa \rbrace$
+\end{alertblock}
+\pause
+\begin{block}{IV}
+$\el{\theta}=\lbrace M \in [H_{\theta}]^{\aleph_0} \colon M \prec H_{\theta}\rbrace$
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{$(4/21)$ \hspace{20mm} Large Subsets}
+\begin{block}{club}
+$C \subseteq [A]^{\kappa}$ is \textbf{closed unbounded} iff
+\begin{enumerate}
+\item
+$\forall x \in [A]^{\kappa} \ \exists y \in C (y \supseteq x)$
+\item
+$\displaystyle \bigcup_{\alpha<\kappa}x_{\alpha} \in C$, for every $\subseteq$-\textbf{increasing} $\langle x_{\alpha}\in C\colon \alpha<\kappa \rangle$
+\end{enumerate}
+\end{block}
+\pause
+\begin{alertblock}{}
+$C=\lbrace \alpha \in \omega_2 \colon \alpha \text{ is a \textbf{limit} ordinal}\rbrace \subseteq \omega_2$
+\end{alertblock}
+\begin{alertblock}{}
+$\el{\theta}\subseteq [H_{\theta}]^{\aleph_0}$
+\end{alertblock}
+\pause
+\begin{definition}
+$S \subseteq [A]^{\kappa}$ is \textbf{Stationary}, if $S$ \textbf{meets} every \textbf{club} $C\subseteq [A]^{\kappa}$
+\end{definition}
+\begin{alertblock}{}
+$S=\lbrace \alpha \in \omega_2 \colon \cf{\alpha}=\omega_1 \rbrace$
+\end{alertblock}
+\end{frame}
+\begin{frame}
+\frametitle{$(5/21)$ \hspace{20mm} Forcing}
+\begin{center}
+{\large $\p=\langle \p, \leq_{\p}, 1_{\p}\rangle\in V$ is a \textbf{Forcing} notion}
+\end{center}
+\vspace{-2mm}
+\pause
+\begin{definition}
+$F \subseteq \p$ is \textbf{filter} if
+\begin{enumerate}
+\item $\forall p, q \in F \ \exists r \in F (r \leq p, q)$
+\item $(q \leq p \land q \in F) \implies p \in F$
+\end{enumerate}
+\end{definition}
+\pause
+\begin{definition}
+$D \subseteq \p$ 
+\begin{itemize}
+\item is \textbf{dense} iff \hspace{10mm} $\forall p \in \p \exists q \in D (q \leq p)$
+\item \textbf{predense} iff \hspace{8.5mm} $\forall p \in \p \exists q \in D (q \parallel p)$
+\end{itemize}
+\end{definition}
+\pause
+\begin{definition}
+$G \subseteq \p$ is \textbf{Generic} over $V$, if
+\begin{enumerate}
+\item $G$ is a filter
+\item  $G \cap D \neq \emptyset \ \forall \text{ Dense/Predense } D\in V$
+\end{enumerate}
+\end{definition}
+\end{frame}
+\begin{frame}
+\frametitle{$(6/21)$ \hspace{15mm} Generic Extension}
+\begin{alertblock}{$\p$-\textbf{name}}
+$\undertilde{x}=\lbrace \op{\undertilde{y}}{p}\colon p \in \p \text{ and }\undertilde{y}\text{ is a $\p$-name}\rbrace$
+\end{alertblock}
+\pause
+\begin{definition}
+$\prg{\undertilde{x}}=\lbrace \prg{\undertilde{y}} \colon \op{\undertilde{y}}{p}\in \undertilde{x}\text{ and } p \in G \rbrace $
+\end{definition}
+\pause
+\begin{definition}
+$\prg{V}=\lbrace \prg{\undertilde{x}}\colon \undertilde{x}\in V \text{ is a $\p$-name}\rbrace$
+\end{definition}
+\pause
+\begin{alertblock}{Lemma}
+Let
+\begin{enumerate}
+\item $\check{x}=\lbrace \op{\check{y}}{1}\colon y \in x \rbrace$ for every $x \in V$
+\item $\dot{G}= \lbrace \op{\check{p}}{p} \colon p \in \p \rbrace$
+\end{enumerate}
+Then for every $H \subseteq \p$ Generic, $\prh{\check{x}}=x$ and $\prh{\dot{G}}=H $
+\end{alertblock}
+\end{frame}
+\begin{frame}
+\frametitle{$(7/21)$ \hspace{20mm} The magics}
+\begin{corollary}
+\begin{itemize}
+\item $V \subseteq \prg{V}$
+\item  $G \in \prg{V}$
+\end{itemize}
+\end{corollary}
+\pause
+\begin{theorem}
+$\prg{V} \models \zfc $ and $\prg{V} \cap \on = V \cap \on$
+\end{theorem}
+\pause
+\begin{alertblock}{\textbf{Cohen Forcing}}
+$\add{\aleph_0}{\aleph_2}=\lbrace p \colon \omega \times \omega_2 \rightarrow 2 \colon |p|<\aleph_0 \rbrace$
+\end{alertblock}
+\begin{block}{}
+\begin{enumerate}
+\item $\cup G \colon \omega \times \omega_2 \longrightarrow 2$ \textbf{NEW}!
+\item $\prg{V}\models\neg\ch$
+\end{enumerate}
+\end{block}
+\pause
+\begin{block}{}
+$A \subseteq \p$ is \textbf{antichain}, if $ p\nparallel q$ for all $p, q \in A$
+
+$\p$ \textbf{preserves} $\theta \geq \kappa$ if its \textbf{maximal} antichains have \textbf{size} $<\kappa$
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{$(8/21)$ \hspace{20mm} Proper Forcing}
+\begin{definition}
+$\p$ is \textbf{Proper} if for every $\theta > \omega$
+
+Every \textbf{Stationary} $S \subseteq [\theta]^{\aleph_0}$ \textbf{remains} stationary in $\prg{V}$
+\end{definition}
+\vspace{-3mm}\pause
+\begin{alertblock}{}
+If $\p$ is proper, then $\aleph_1^V=\aleph_1^{\prg{V}}$
+\end{alertblock}
+\vspace{-2mm}\pause
+\begin{alertblock}{Master Condition}
+$q \in \p \in M \in \el{\theta}$ is called $(M, \p)$-\textbf{Generic condition}, if
+
+for every $D \in M$, \textbf{dense} in $\p$, $D \cap M$ is \textbf{predense} below $q$
+\end{alertblock}
+\vspace{-2mm}\pause
+\begin{theorem}
+$\p$ is proper if and only if
+
+For \textbf{every} large enough cardinal $\theta$ and \textbf{club many} $M \in \el{\theta}$
+
+Every $p \in \p \cap M$ has an $(M, \p)$-generic \textbf{extension}
+\end{theorem}
+\vspace{-2mm}\pause
+\begin{block}{strong properness}
+Using \textbf{strongly} $(M, \mathds{P})$-generic conditions,  $D \subseteq \mathds{P} \cap M$ must be predense below $q$.
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{$(9/21)$ \hspace{20mm} The Gitik's question}
+Is there a \textbf{cardinal} and $\gch$ \textbf{preserving} extension of the universe in which there is $A \subseteq \kappa$ of \textbf{size} $\kappa$ such that for every \textbf{countable infinite} $x \in \mathcal{P}^V(\kappa)$
+\begin{itemize}
+\item $x \cap A \neq \emptyset$
+\item  $x \cap (\kappa \setminus A)\neq \emptyset$
+\end{itemize}
+\pause
+\begin{alertblock}{}
+Let $\p_{\kappa}=\lbrace p \colon \kappa \longrightarrow 2 \colon |p|<\aleph_0 \rbrace$
+
+$$A=\lbrace \alpha \colon \exists p \in G (p(\alpha)=1)\rbrace$$
+\end{alertblock}
+For every $x \in \mathcal{P}(\kappa) \cap V$, let
+
+$$D_x= \lbrace q \in \p \colon \exists \gamma, \gamma' \in x (q(\gamma)=1 \text{ and }q(\gamma')=0)\rbrace$$
+\pause
+\begin{alertblock}{The problem}
+$\p_{\kappa} \cong \add{\aleph_0}{\kappa}$ So for $\kappa \geq \aleph_2$, the $\gch$ \textbf{FAILS}!
+\end{alertblock}
+\end{frame}
+\begin{frame}
+\frametitle{$(10/21)$ \hspace{20mm} The answer for $\aleph_2$}
+\begin{alertblock}{}
+Let $x \subseteq \el{\theta}$
+\begin{itemize}
+\item $\delta_M=M \cap \omega_1$ for each $M \in x$
+\item $x(\alpha)=\lbrace M \in x \colon \delta_M=\alpha \rbrace$
+\item  $\supp{x}=\lbrace \delta_M : M \in x \rbrace$
+\end{itemize}
+\end{alertblock}
+\pause
+$p =\op{\mathcal{M}_p}{f_p} \in \p$  where:
+\begin{enumerate}
+\item  $f_p \in \p_{\aleph_2}$
+\item $\mathcal{M}_p \subseteq \el{\aleph_2}$ finite
+\item $M, M' \in \mathcal{M}_p \text{ and } \delta_M=\delta_{M'} \implies M \cong M'$
+\item $M, M' \in \mathcal{M}_p \text{ and } \delta_M<\delta_{M'} \implies \exists M''\cong M'(M \in M'')$
+\item If $M \in \mathcal{M}_p$, then for all $M'\in\mathcal{M}_p$ with $M \cong M'$,
+\[
+\alpha \in \dom{f_p} \cap M \implies
+\begin{cases}
+ \varphi_{M, M'}(\alpha) \in \dom{f_p}\\
+ f_p(\varphi_{M, M'}(\alpha))=f_p(\alpha)
+\end{cases}
+\]
+\end{enumerate}
+\pause
+\vspace{-4mm}
+\begin{alertblock}{}
+$$A=\lbrace \alpha \colon \exists p \in G (f_p(\alpha)=1)\rbrace$$
+\end{alertblock}
+\end{frame}
+\begin{frame}
+\frametitle{$(11/21)$ \hspace{10mm}Strongly Master Condition}
+\begin{lemma}[Strongly $(N, \p)$-Generic Extension]
+Let $\theta > \omega_2$ large enough and $N \in \el{\theta}$
+
+Let $p \in \p \cap N$ and assume $M= N \cap H_{\omega_2}$
+\begin{enumerate}
+\item $M \in \el{\omega_2}$
+\item $p'=\op{\mathcal{M}_p \cup \lbrace M \rbrace}{f_p}$ is the master condition
+\end{enumerate}
+\end{lemma}
+\pause
+Let $D \subseteq \p \cap N$ \textbf{dense}, and $q \leq p'$ (Note that $M \in \mathcal{M}_q$)
+\pause
+\begin{lemma}
+By \textbf{Elementarity}, there exists $\hat{q}=\op{\hat{\mathcal{M}}_q}{\hat{f_q}}\in \p \cap N$
+\begin{enumerate}
+\item $\hat{q}\parallel q$
+\item $\supp{\hat{\mathcal{M}}_q}=\supp{\mathcal{M}_q} \cap N$
+\item  $\mathcal{M}_q \cap N \subseteq \hat{\mathcal{M}}_q$
+\item $M_1\in \mathcal{M}_q$ and $M_2 \in \hat{\mathcal{M}}_q(\delta_{M_1}) \implies M_1 \cong M_2$
+\item  $\hat{f_q} \supseteq \res{f_q}{N}$
+\end{enumerate}
+\end{lemma}
+\end{frame}
+\begin{frame}
+\frametitle{$(12/21)$ \hspace{10mm} The restriction of $q$ to $N$}
+Let $W$ be the set of all $\in$-chains $w=\langle N_1^w, \dots, N_l^w\rangle$ in $\hat{\mathcal{M}}_q \cup \mathcal{M}_q$ such that $N_l^w \in \mathcal{M}_q(\delta_M)$
+\begin{alertblock}{}
+$\res{q}{N}=\op{\res{\mathcal{M}_q}{M}}{\res{f_q}{M}}$ where
+$$\res{\mathcal{M}_q}{N}=\lbrace \varphi_{N_l^w, M}(N_i^w) \colon w\in W \text{ and } 1 \leq i < l \rbrace$$
+\end{alertblock}
+\pause
+\begin{lemma}
+$\res{q}{N} \in \p \cap N$
+\end{lemma}
+\pause
+Let $r \in D$, \textbf{extends} $\res{q}{N}$
+\begin{block}{}
+$s=\op{\mathcal{M}_s}{f_s}$ where
+
+$\mathcal{M}_s=\mathcal{M}_r \cup \mathcal{M}_q \cup \lbrace \varphi_{M, N}(K): N \in \mathcal{M}_q(\delta_M) \text{ and } K \in \mathcal{M}_r \rbrace$
+
+$f_s=f_r \cup f_q \cup \lbrace\op{\varphi_{N', N''}(\alpha)}{f_r(\alpha)} \colon$
+
+$\alpha \in \dom{f_r}, N' , N'' \in \mathcal{M}_s \text{ and }  \delta_{N'}=\delta_{N''}\rbrace$
+\end{block}
+\pause
+\begin{alertblock}{}
+$(\gch)$ \quad $\p$ is $\aleph_2\cc$ so preserves \textbf{all} cardinals
+\end{alertblock}
+\end{frame}
+\begin{frame}
+\frametitle{$(13/21)$ \hspace{15mm} Preserving the $\ch$}
+\begin{lemma}
+Let $p \in M \cong M' \in \el{\aleph_2}$,
+\begin{enumerate}
+\item $p_{M,M'}=\op{\mathcal{M}_p \cup \lbrace M, M'\rbrace}{f_p \cup \lbrace \op{\varphi_{M,M'}(\alpha)}{f_p(\alpha)}\colon$
+
+$\alpha \in \dom{f_p}\rbrace}$
+\item $p_{M, M'} \Vdash\check{\varphi}_{M, M'}[\dot{G} \cap \check{M}]=\dot{G} \cap \check{M'}$
+\end{enumerate}
+\end{lemma}
+\pause
+\begin{lemma}{}
+$\p$ preserves the $\ch$
+\end{lemma}
+\begin{alertblock}{}
+By \textbf{contradiction} assume $p \Vdash \langle \undertilde{r}_{\alpha}: \alpha < \omega_2 \rangle$ is a set of \textbf{reals}
+
+Let $p_{\alpha} \leq p$ and $p_{\alpha} \Vdash\undertilde{r}_{\alpha} \subseteq \check{\omega}$
+
+Let $p_{\alpha}, p, \p, \undertilde{r}_{\alpha} \in M_{\alpha} \in \el{\theta}$
+
+There is $\alpha<\beta<\omega_2$ s.t. $\langle M_{\alpha}, \in, \p, p_{\alpha}, \undertilde{r}_{\alpha} \rangle \cong \langle M_{\beta}, \in, \p, p_{\beta}, \undertilde{r}_{\beta} \rangle$
+
+$p_{M_{\alpha}, M_{\beta}} \leq p_{\alpha}, p_{\beta} \text{ and }p_{M_{\alpha}, M_{\beta}} \Vdash \undertilde{r}_{\alpha}=\undertilde{r}_{\beta}$
+\end{alertblock}
+\end{frame}
+\begin{frame}
+\frametitle{$(14/21)$ \hspace{20mm} Adding a club}
+ \begin{theorem}
+Let $T \subseteq \kappa$ \textbf{stationary}. There are \textbf{stationary} sets $S_1, S_2\subseteq T$ such that $S_1 \cap S_2 =\emptyset$
+\end{theorem}
+\pause
+\begin{alertblock}{Baumgartner, Harrington and Kleinberg (1976)}
+Let $T \subseteq \omega_1$ \textbf{stationary}. There is a forcing notion which adds a \textbf{club} $C \subseteq T$
+\end{alertblock}
+\pause
+\begin{block}{(1983)Abraham-Shelah}
+Let $S \subseteq \kappa$ \textbf{fat stationary}. There is a forcing notion which adds a \textbf{club} $C \subseteq S$ and adds \textbf{no new} sets of \textbf{size} $<\kappa$
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{$(15/21)$ \hspace{20mm}Still adding club}
+\begin{alertblock}{2004 Mitchell, 2005 Friedman}
+A \textbf{club} in $\omega_2$ with \textbf{finite} conditions
+
+The first use of  \textbf{side conditions} to add an object to a cardinal $>\aleph_1$
+\end{alertblock}
+\pause
+\begin{block}{2014 Neeman}
+A \textbf{club} in $\omega_2$ with \textbf{finite} condition contains $\in$-chains of \textbf{elementary} \textbf{substructures} of \textbf{two} types
+\end{block}
+\pause
+\begin{alertblock}{We (2024)?}
+\textbf{ A Generalization} of Abraham's Forcing from another aspect
+\end{alertblock}
+\end{frame}
+\begin{frame}
+\frametitle{$(16/21)$ \hspace{20mm}  Preliminaries}
+\begin{alertblock}{}
+$\mathcal{N}=\langle N_{\xi}\colon \xi \leq \alpha \rangle$
+is an $\alpha$-\textbf{tower} where
+\begin{enumerate}
+\item
+$N_{\xi} \in \el{\lambda}$
+\item
+$N_{\zeta} \in N_{\zeta +1}$
+\item
+$\displaystyle N_{\delta}= \bigcup_{\xi < \delta}N_{\xi}$ for \textbf{limit} $\delta$
+\end{enumerate}
+\pause
+\end{alertblock}
+\begin{block}{}
+$q$ is $(\mathcal{N}, \p)$-generic, if it is $(N_{\xi}, \p)$-generic for every $\xi \leq \alpha$
+\end{block}
+\pause
+\begin{alertblock}{}
+$\p$ is $\alpha$-\textbf{proper}, if for \textbf{every} $\alpha$-tower $\mathcal{N}$, every $p \in N_0$ has an $(\mathcal{N}, \p)$-generic extension
+
+$\p$ is $<\alpha$-proper, if is $\beta$-proper for \textbf{every} $\beta<\alpha$
+\end{alertblock}
+\pause
+\begin{block}{}
+$\alpha$ is \textbf{indecomposable}, if $\beta + \gamma < \alpha$, for \textbf{every} $\beta \leq \gamma < \alpha$
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{$(17/21)$ \hspace{20mm} The Forcing Notion}
+\begin{definition}
+$p=\op{\mathcal{M}_p}{f_p}$ where
+\begin{enumerate}
+\item
+$\mathcal{M}_p= \langle M^p_i \in \el{\aleph_1}: i < n_p  \rangle$ \textbf{finite} $\in$-chain
+\item
+$f_p: \mathcal{M}_p \longrightarrow H_{\omega_1}$ such that
+\end{enumerate}
+\begin{itemize}
+\item 
+$f_p(M^p_i) \subset M^p_{i+1}$ \textbf{finite}
+\item 
+$f_p(M^p_{n_p-1}) \subset H_{\omega_1}$ \textbf{finite}
+\end{itemize}
+\end{definition}
+\pause
+\begin{alertblock}{}
+$q \leq p$ if and only if
+\begin{enumerate}
+\item $\mathcal{M}_p \subseteq \mathcal{M}_q$
+\item $f_p(M) \subseteq f_q(M)$, for \textbf{all} $M \in \mathcal{M}_p$
+\end{enumerate}
+\end{alertblock}
+\end{frame}
+\begin{frame}
+\frametitle{$(18/21)$ \hspace{20mm} $\p$ Adds a club}
+\begin{theorem}
+$C=\lbrace \delta_M \colon  \exists p \in G(M \in \mathcal{M}_p)\rbrace$ is a \textbf{club} in $\omega_1$
+\end{theorem}
+\pause
+\begin{lemma}
+$D_{\gamma}= \{q \in \p \colon \exists M \in \mathcal{M}_q(\gamma < \delta_M)\}$ is \textbf{Dense}
+\end{lemma}
+\begin{alertblock}{}
+$(\forall p \in \p) (\forall\gamma \in \omega_1)(\exists p' \leq p)(\exists N \in \mathcal{M}_{p'})(\gamma < \delta_N)$ 
+\end{alertblock}
+\pause
+\begin{lemma}
+If $p \Vdash\check{\gamma} \notin \dot{C}$, then $p \Vdash \check{\gamma} \notin \lim\dot{C}$
+\end{lemma}
+\begin{alertblock}{}
+$\delta_{M^{p'}_i} < \gamma < \delta_{M^{p'}_{i+1}} \implies \gamma < \xi \in \delta_{M^{p'}_{i+1}}$
+
+$f_q(M^{p'}_i)=f_{p'}(M^{p'}_i) \cup \{\xi\}$
+
+$r \leq q \implies r \Vdash \dot{C} \cap (\delta_{M^{p'}_i}, \xi]=\emptyset$
+\end{alertblock}
+\end{frame}
+\begin{frame}
+\frametitle{$(19/21)$ \hspace{20mm} Properness }
+\begin{theorem}
+$\p$ is proper
+\end{theorem}
+\begin{alertblock}{}
+Let $p \in M' \in \el{\theta}$ and $M=M' \cap H_{\omega_1}$
+
+$p'=\op{\mathcal{M}_p \cup \lbrace M \rbrace}{f_p \cup \op{M}{\emptyset}}$
+
+Let $D \subseteq \p \cap M'$ and $q \leq p'$
+
+$\res{q}{M'}=\op{\mathcal{M}_q\cap M}{\res{f_q}{M}}$
+
+Let $r \leq \res{q}{M'}$
+
+$s = \op{\mathcal{M}_r \cup \mathcal{M}_q}{f_r \cup f_q}$
+\end{alertblock}
+\pause
+\begin{theorem}
+$\p$ is \textbf{not} $\omega$-proper
+\end{theorem}
+\begin{alertblock}{}
+Let $\mathcal{N}=\langle N_i \colon i \leq \omega \rangle$ be an $\omega$-tower and $p \in N_0$
+
+If $ q \leq p$ is $(\mathcal{N}, \p)$-generic, then $q \Vdash \dot{C} \text{ is \textbf{not} a club}$
+\end{alertblock}
+\end{frame}
+\begin{frame}
+\frametitle{$(20/21)$ \hspace{15mm}Generalized case}
+\begin{definition}
+Let $\alpha < \omega_1$ \textbf{indecomposable}
+
+$\p[\alpha]=\lbrace p=\langle \mathcal{M}_p, f_p, \mathcal{W}_p \rangle \rbrace$ where
+\begin{itemize}
+\item
+$\mathcal{M}_p=\langle M^p_{\xi}\in \el{\aleph_1} \colon \xi \leq \gamma_p < \alpha \rangle$ a \textbf{continuous} $\in$-chain
+\item
+$f_p: \mathcal{M}_p \longrightarrow H_{\omega_1}$ s.t.
+
+$f_p(M^p_{\xi}) \subset M^p_{\xi+1}$ \textbf{finite}
+
+$f_p(M^p_{\gamma}) \subset H_{\omega_1}$ \textbf{finite}
+\item
+$\mathcal{W}_p \subset \mathcal{M}_p \text{ s.t. }\forall N \in \mathcal{W}_p,  \res{p}{N}= \langle \mathcal{M}_p \cap N, \res{f_p}{N}, \mathcal{W}_p \cap N \rangle \in N$
+\end{itemize}
+\end{definition}
+\begin{alertblock}{}
+$q \leq p$ if and only if
+\begin{enumerate}
+\item $\mathcal{M}_p \subseteq \mathcal{M}_q$
+\item  $f_p(M) \subseteq f_q(M)$ for \textbf{all} $M \in \mathcal{M}_p$
+\item  $\mathcal{W}_p \subseteq \mathcal{W}_q$
+\end{enumerate}
+\pause
+\end{alertblock}
+\vspace{-2mm}
+\begin{block}{}
+$C=\{\delta_M \colon \exists p \in G (M \in \mathcal{M}_p)\}$ is a \textbf{club} in $\omega_1$
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{$(21/21)$ \hspace{20mm} Properness}
+\begin{theorem}
+$\p[\alpha]$ \textbf{is} $<\alpha$-proper but \textbf{not} $\alpha$-proper
+\end{theorem}
+\vspace{-2mm}
+\pause
+\begin{alertblock}{}
+$\mathcal{N}=\langle N_{\zeta} \colon \zeta \leq \beta < \alpha \rangle$ and  $p \in \p[\alpha] \cap N_0$ fix
+
+$p'= \langle \mathcal{M}_{p'}, f_{p'}, \mathcal{W}_{p'} \rangle$ such that
+\begin{enumerate}
+\item $\mathcal{M}_{p'}= \mathcal{M}_p \cup \mathcal{N}$
+\item $f_{p'}(M^{p'}_{\xi})=f_p(M^p_{\xi})$ for $\xi \leq \gamma_p$
+\item $f_{p'}(N_{\zeta})= \delta_{N_{\zeta}}+1$ for $\zeta \leq \beta$
+\item $\mathcal{W}_{p'}= \mathcal{W}_p \cup \{N_{\zeta} \in \mathcal{N} \colon \zeta \text{ is \textbf{not} a \textbf{limit}} \}$
+\end{enumerate}
+\end{alertblock}
+\vspace{-2mm}
+\pause
+\begin{block}{}
+$p'$ is \textbf{strongly} $(N_{\zeta}, \p[\alpha])$-generic if $\zeta$ is \textbf{non-limit}
+
+$p'$ is $(N_{\delta}, \p[\alpha])$-\textbf{generic} if $\delta$ is \textbf{limit}
+\end{block}
+\vspace{-2mm}
+\pause
+\begin{alertblock}{}
+Let $\mathcal{N}=\langle N_{\xi} \colon \xi \leq \alpha \rangle$ is an $\alpha$-tower and $p \in N_0$
+
+If $ q \leq p$ is $(\mathcal{N}, \p[\alpha])$-generic, then $q \Vdash \dot{C} \text{ is \textbf{not} a \textbf{club}}$
+\end{alertblock}
+\end{frame}
+\begin{frame}{References}
+\begin{thebibliography}{9}
+\bibitem{k1}Hoseini Naveh, R. and Golshani, M. and Eslami, E., Adding highly generic subsets of $\omega_2$, Mathematical Logic Quarterly, 70(1), 126-133, 2024
+\bibitem{k2} Hoseini Naveh, R. and Golshani, M., Adding {A}braham clubs and  $\alpha$-properness, Proceedings of the American Mathematical Society, submitted, 2024
+\bibitem{AS} Abraham, U. and Shelah, S., Forcing Closed Unbounded Sets, The Journal of Symbolic Logic, 48(3), 643--657, 1983
+\bibitem{neeman} Neeman, I., Forcing with Sequences of Models of Two Types, Notre Dame Journal of Formal Logic, 55(2), 265 - 298, 2014
+\bibitem{todorcevic3} Borisa Kuzeljevic and Stevo Todorčević, Forcing with Matrices of Countable Elementary Submodels, Proceedings of the American Mathematical Society, 145(5), 2211-2222, 2017
+\end{thebibliography}
+\cite{AS}\cite{k1}\cite{k2}\cite{neeman}\cite{todorcevic3}
+\end{frame}
+\begin{frame}
+\begin{center}
+\textbf{{\Huge \textbf{Thank You}}}
+\end{center}
+\end{frame}
+\end{document}
