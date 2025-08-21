@@ -19,7 +19,9 @@ Download [English]() or [Farsi](Academic CV RHoseiniNaveh.pdf) version.
 #### (3) [Adding Abraham clubs and $\alpha$-properness](https://arxiv.org/abs/2409.09697), with [M. Golshani](https://math.ipm.ac.ir/~golshani/), submited (2024).
 ### talk slides
 #### Weekly Lectures - Mahani Math Research Institute - Shahid Bahonar University of Kerman
-##### (1) Independence of the $CH$ with gentle introduction to Forcing -[PDF](Independence of the $CH$ with gentle introduction to Forcing.pdf)- [TeX](Independence of the $CH$ with gentle introduction to Forcing.tex)
+##### (1) Independence of the CH with gentle introduction to Forcing -[PDF](Independence of the $CH$ with gentle introduction to Forcing.pdf)- [TeX](Independence of the $CH$ with gentle introduction to Forcing.tex)
+#### Seminar on Mathematical Logic and its Applications - IPM - 1403
+##### Adding  Abraham clubs and  alpha-properness -[PDF](logic seminar 1403.pdf)- [TeX](logic seminar 1403.tex)
 # Contact
 ### e-mail:
 #### r.hoseini.nave@Gmail.com
