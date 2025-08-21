@@ -20,7 +20,7 @@ Download [English]() or [Farsi](Academic CV RHoseiniNaveh.pdf) version.
 ### talk slides
 #### Adding  Abraham clubs and  alpha-properness -[PDF](logic seminar 1403.pdf)- [TeX](logic seminar 1403.tex) (Seminar on Mathematical Logic and its Applications - IPM 1403)
 #### Adding Highly Generic Subsets of omega_2 - [PDF](manteq.pdf) - [Tex](manteq.tex) (The 10th Annual Conference of the Iranian Association for Logic - Department of mathematics - Amirkabir University of Technology - Tehran 1401)
-
+#### Two types side condition forcing preserving the GCH - [PDF](Twoside.pdf) - [Tex](Twoside.tex) (RIMS Set Theory Workshop - Kyoto University - Japan)
 #### Independence of the CH with gentle introduction to Forcing -[PDF](Independence.pdf)- [TeX](Independence.tex) (Weekly Lectures - Mahani Math Research Institute - Shahid Bahonar University of Kerman)
 #### Forcing With Elementary Substructures -[PDF](proposalslide(1).pdf)- [TeX](proposalslide(1).tex) (Weekly Lectures - Mahani Math Research Institute - Shahid Bahonar University of Kerman)
 #### Forcing With side condition -[PDF](Fwsc.pdf)- [TeX](Fwsc.tex) (Weekly Lectures - Mahani Math Research Institute - Shahid Bahonar University of Kerman)
