@@ -1,0 +1,505 @@
+\documentclass[10pt]{beamer}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{yhmath}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{mathalfa}
+\usepackage{upgreek}
+\usepackage{yfonts}
+\usetheme{Warsaw}
+\usepackage{todonotes}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{dsfont}
+\usepackage{accents}
+%\usetheme{Madrid}
+%\usetheme{Bergen}
+%\usetheme{AnnArbor}
+%\usetheme{CambridgeUS}\setbeamercovered{dynamic}
+%\usetheme{Hannover}
+%\usetheme{Antibes}
+%\usetheme{Copenhagen}
+%\usetheme{Marburg} 
+\usefonttheme{serif}
+\newcommand{\fn}{\mathbb{P}_{\in, \mathcal{M}}^{\mathcal{S}, \mathcal{T}}}
+\newcommand{\ms}{\mathcal{S}}
+\newcommand{\mt}{\mathcal{T}}
+\newcommand{\e}{\in^{\star}}
+\newcommand{\lf}{{\rm lf}}
+\newcommand{\per}{{\rm per}}
+\newcommand{\Th}{{\rm Th}}
+\newcommand{\tp}{{\rm tp}}
+\newcommand{\ec}{{\rm ec}}
+\newcommand{\ic}{{\rm ic}}
+\newcommand{\dc}{{\rm dc}}
+\newcommand{\cc}{{\rm cc}}
+\newcommand{\cd}{{\rm cd}}
+\newcommand{\JM}{{\rm JM}}
+\newcommand{\pe}{{\rm pe}}
+\newcommand{\nd}{{\rm nd}}
+\newcommand{\ndd}{{\rm ndd}}
+\newcommand{\us}{{\rm us}}
+\newcommand{\ed}{{\rm ed}}
+\newcommand{\pu}{{\rm pu}}
+\newcommand{\Av}{{\rm Av}}
+\newcommand{\CH}{{\rm CH}}
+\newcommand{\Ax}{{\rm Ax}}
+\newcommand{\otp}{{\rm otp}}
+\newcommand{\stat}{{\rm stat}}
+\newcommand{\club}{{\rm club}}
+\newcommand{\gen}{{\rm gen}}
+\newcommand{\dep}{{\rm dp}}
+\newcommand{\deef}{{\rm def}}
+\newcommand{\fil}{{\rm fil}}
+\newcommand{\cor}{{\rm cor}}
+\newcommand{\at}{{\rm at}}
+\newcommand{\Ord}{{\rm Ord}}
+\newcommand{\Aut}{{\rm Aut}}
+\newcommand{\Gen}{{\rm Gen}}
+\newcommand{\Lim}{{\rm Lim}}
+\newcommand{\aut}{{\rm aut}}
+\newcommand{\peq}{{\rm peq}}
+\newcommand{\amal}{{\rm amal}}
+\newcommand{\bs}{{\rm bs}}
+\newcommand{\bd}{{\rm bd}}
+\newcommand{\eq}{{\rm eq}}
+\newcommand{\df}{{\rm df}}
+\newcommand{\qdef}{{\rm qdef}}
+\newcommand{\cg}{{\rm cg}}
+\newcommand{\ab}{{\rm ab}}
+\newcommand{\gr}{{\rm gr}}
+\newcommand{\clf}{{\rm clf}}
+\newcommand{\id}{{\rm id}}
+\newcommand{\olf}{{\rm olf}}
+\newcommand{\plf}{{\rm plf}}
+\newcommand{\vK}{{\rm vK}}
+\newcommand{\qK}{{\rm qK}}
+\newcommand{\rK}{{\rm rK}}
+\newcommand{\EC}{{\rm EC}}
+\newcommand{\pK}{{\rm pK}}
+\newcommand{\uK}{{\rm uK}}
+\newcommand{\wK}{{\rm wK}}
+\newcommand{\Cm}{{\rm Cm}}
+\newcommand{\LST}{{\rm LST}}
+\newcommand{\COV}{{\rm COV}}
+\newcommand{\cov}{{\rm cov}}
+\newcommand{\tcf}{{\rm tcf}}
+\newcommand{\elf}{{\rm elf}}
+\newcommand{\grp}{{\rm grp}}
+\newcommand{\prlf}{{\rm prlf}}
+%\newcommand{\def}{{\rm def}}
+\newcommand{\pdef}{{\rm pdef}}
+\newcommand{\exlf}{{\rm exlf}}
+\newcommand{\slf}{{\rm slf}}
+\newcommand{\rlf}{{\rm rlf}}
+\newcommand{\fin}{{\rm fin}}
+%\newcommand{\enddd}{{\rm end}}
+\newcommand{\rfin}{{\rm rfin}}
+%\newcommand{\sp}{{\rm sp}}
+\newcommand{\Min}{{\rm Min}}
+%\newcommand{\min}{{\rm min}}
+\newcommand{\Dom}{{\rm Dom}}
+\newcommand{\Rang}{{\rm Rang}}
+\newcommand{\pcf}{{\rm pcf}}
+\newcommand{\Reg}{{\rm Reg}}
+\newcommand{\Add}{{\rm Add}}
+\renewcommand{\baselinestretch}{1.75}
+\newcommand{\lh}{{\ell g}}
+\newcommand{\rest}{{\restriction}}
+\newcommand{\dom}{{\rm dom}}
+\newcommand{\hrtg}{{\rm hrtg}}
+\newcommand{\rng}{{\rm range}}
+\newcommand{\set}{{\rm set}}
+\newcommand{\FA}{{\rm FA}}
+\newcommand{\wilog}{{\rm without loss of generality}}
+\newcommand{\Wilog}{{\rm Without loss of generality}}
+\newcommand{\then}{{\underline{then}}}
+\newcommand{\when}{{\underline{when}}}
+\newcommand{\Then}{{\underline{Then}}}
+\newcommand{\When}{{\underline{When}}}
+\newcommand{\If}{{\underline{if}}}
+\newcommand{\Iff}{{\underline{iff}}}
+\newcommand{\mn}{{\medskip\noindent}}
+\newcommand{\sn}{{\smallskip\noindent}}
+\newcommand{\bn}{{\bigskip\noindent}}
+\newcommand{\cA}{{\mathscr A}}
+\newcommand{\bB}{{\bf B}}
+\newcommand{\cB}{{\mathscr B}}
+\newcommand{\bbB}{{\mathbb B}}
+\newcommand{\bbG}{{\mathbb G}}
+\newcommand{\bbR}{{\mathbb R}}
+\newcommand{\gb}{{\mathfrak b}}
+\newcommand{\cC}{{\mathscr C}}
+\newcommand{\bbC}{{\mathbb C}}
+\newcommand{\bD}{{\bf D}}
+\newcommand{\bbD}{{\mathbb D}}
+\newcommand{\cD}{{\mathscr D}}
+\newcommand{\gd}{{\mathfrak d\/}}
+\newcommand{\bH}{{\bf H}}
+\newcommand{\cH}{{\mathscr H}}
+\newcommand{\bE}{{\mathbb E}}
+\newcommand{\bF}{{\bf F}}
+\newcommand{\cF}{{\mathscr F}}
+\newcommand{\cE}{{\mathscr E}}
+\newcommand{\cJ}{{\mathscr J}}
+\newcommand{\cG}{{\mathscr G}}
+\newcommand{\cI}{{\mathscr I}}
+\newcommand{\cK}{{\mathscr K}}
+\newcommand{\bbL}{{\mathbb L}}
+\newcommand{\bbN}{{\mathbb N}}
+\newcommand{\cM}{{\mathscr M}}
+\newcommand{\gm}{{\mathfrak m}}
+\newcommand{\cN}{{\mathscr N}}
+\newcommand{\bbP}{{\mathbb P}}
+\newcommand{\cP}{{\mathscr P}}
+\newcommand{\gp}{{\mathfrak p}}
+\newcommand{\gy}{{\mathfrak y}}
+\newcommand{\gq}{{\mathfrak q}}
+\newcommand{\gx}{{\mathfrak x}}
+\newcommand{\gP}{{\mathfrak P}}
+\newcommand{\bbQ}{{\mathbb Q}}
+\newcommand{\bbZ}{{\mathbb Z}}
+\newcommand{\dbQ}{{\name{\mathbb Q}}}
+\newcommand{\mbR}{{\mathbb R}}
+\newcommand{\bS}{{\bf S}}
+%\newcommand{\cS}{{\mathscr S}}
+\newcommand{\scr}{{\mathscr S}}
+\newcommand{\cT}{{\mathscr T}}
+\newcommand{\gt}{{\mathfrak t}}
+\newcommand{\cU}{{\mathscr U}}
+\newcommand{\cX}{{\mathscr X}}
+\newcommand{\cY}{{\mathscr Y}}
+\newcommand{\cZ}{{\mathscr Z}}
+\newcommand{\trind}{{\rm trind}}
+\newcommand{\cf}{{\rm cf}}
+\newcommand{\pr}{{\rm pr}}
+\newcommand{\Sup}{{\rm Sup}}
+\newcommand{\supp}{{\rm supp}}
+
+\begin{document}
+\title{Two side conditions forcing preserving the GCH}
+%\subtitle{{\small (Side condition forcing)}}
+\author{Rouholah HoseiniNaveh\\
+(joint work with Mohammad Golshani)}
+%{
+%\setbeamercolor{background canvas}{bg=yellow}
+\begin{frame}
+\date{October 26, 2022}
+\maketitle
+
+\begin{center}
+RIMS Set Theory Workshop\\
+Kyoto University, Japan
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{$\aleph_1$-PRESERVING FORCINGS}
+\begin{block}{Proper Forcings}
+A forcing notion $\mathbb{P}$ is proper if for every infinite $X$ and every stationary set $S \subseteq [X]^{\leq \aleph_0}$, $S$ remains stationary in $V[G]$
+\end{block}
+\begin{itemize}
+\item \textbf{Shelah:} If $\mathbb{P}$ is proper then forcing with $\mathbb{P}$ preserves $\aleph_1$
+\item \textbf{Shelah:} Countable support iteration of proper forcing notions is proper
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{PROPERNESS \& STRONGLY PROPERNESS}
+Let $\theta$ be a large enough regular cardinal, $\mathbb{P}$ a forcing notion and $\langle N, \in, \leq_w \rangle \prec \langle H(\theta), \in, \leq_w \rangle $ countable with $\mathbb{P} \in N $
+\begin{block}{}
+$q$ is $(N, \mathbb{P})$-generic condition if for every dense open set $D \subset \mathbb{P}$, if $D \in N$ then $D \cap N$ is predense below $q$\\
+$\mathbb{P}$ is proper iff for all such $N$, every $p \in \mathbb{P} \cap N$ has an $(N, \mathbb{P})$-generic extension
+\end{block}
+\begin{block}{}
+$q \in \mathbb{P}$ is $(N, \mathbb{P})$-strongly generic condition if every dense open set $D \subseteq \mathbb{P} \cap N$ is predense below $q$\\
+$\mathbb{P}$ is strongly proper iff for all such $N$, every $p \in \mathbb{P} \cap N$ has an $(N, \mathbb{P})$-strongly generic extension
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{THE $\in$-COLLAPSE FORCING}
+\framesubtitle{Todorcevic $1984$}
+\vspace{-2mm}
+\begin{block}{}
+$\mathbb{P}_{\in}(\theta)$ is the set of all finite $\in$-chains of countable elementary submodels of $\langle H(\theta), \in, \leq_w \rangle $ with the inverse inclusion
+\end{block}
+
+Let $\kappa > \theta$ be a large enough regular cardinal and $\langle M', \in, <_w \rangle \prec \langle H(\kappa), \in, <_w \rangle$ with $\theta \in M'$ and $M=M' \cap H(\theta)$
+\begin{itemize}
+\item If $M \in q$, then $q \cap M' \in \mathbb{P}_{\in}(\theta) \cap M'$
+\item If $p \in \mathbb{P}_{\in}(\theta) \cap M'$, then	$p \cup \{M\} \in \mathbb{P}_{\in}(\theta)$.
+\end{itemize}
+\begin{block}{Applications}
+ $PFA$ implies $OGA, PID, BA(\omega_1)$
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{MATRIX $\in$-COLLAPSE FORCING}
+\framesubtitle{Todorcevic $2017$}
+\vspace{-10mm}
+$$\mathcal{S}= \{M \in [H(\theta)]^{\aleph_0} : \langle M, \in, <_w \rangle \prec \langle H(\theta), \in, <_w \rangle \}$$
+\vspace{-6mm}
+\begin{block}{}
+$\mathbb{P}_{\in}^{\mathcal{M}}= \{p \subset \mathcal{S} \ | \ |p| < \aleph_0 \}$ such that
+\begin{itemize}
+\item If $M, N \in p$ and $M \cap \omega_1 = \delta_M = \delta_N = N \cap \omega_1$, then $\langle M, \in, <_w \rangle \simeq \langle N, \in, <_w \rangle$
+\item If $M \in p$ and $\delta \in dom(p)$ such that $\delta_M < \delta$, then $ \exists N \in p(\delta) \ (M \in N)$.
+
+where $p(\alpha)=\{ M \in p : \delta_M=\alpha\}$ and $dom(p)= \{\alpha: p(\alpha) \neq \emptyset\}$.
+\end{itemize}
+\end{block}
+$\mathbb{P}_{\in}^{\mathcal{M}}$ is strongly proper and forces the Continuum Hypothesis
+\end{frame}
+\begin{frame}
+\frametitle{Aplications}
+\begin{itemize}
+\item In $V[G]$ there is a Kurepa tree with exactly $\omega_2$ branches that does not contain Aronszajn subtrees
+\end{itemize}
+\begin{block}{Gitik's question $(2017)$}
+Let $\kappa \geq \aleph_2$ be a regular cardinal. Is there a cardinal and $GCH$ preserving extension in which there exists a set $A \subseteq \kappa$ of size $\kappa$ such that for all countable set $X \in \mathscr{P}(\kappa) \cap V$, $A \cap X$ and $X\backslash A$ are non-empty?
+\end{block}
+\end{frame}
+\begin{frame}
+For all $\kappa$, $\mathbb{P}_{\kappa}=\{p: \kappa \longrightarrow 2 : |p| < \aleph_0\} \cong Add(\omega, \kappa)$ forces the existens of such set $A$, but it also forces $2^{\aleph_0} \geq \kappa$. So for $\kappa \geq \aleph_2$ the $CH$ fails
+\begin{theorem}[R.Hoseininaveh-M.Golshani]
+The answer to Gitik's question is Yes for $\kappa=\aleph_2$.
+\end{theorem}
+\begin{definition}
+Let $p= \langle \mathcal{M}_p, f_p \rangle \in \mathbb{P}$ iff
+\begin{itemize}
+\item $\mathcal{M}_p \in \mathbb{P}_{\in}^M$
+\item $f_p : \omega_2 \longrightarrow 2$ is a finite partial function
+\item Suppose $M, N \in \mathcal{M}_p$ and $\delta_M = \delta_N$. for all $\alpha < \omega_2$, if $\alpha \in \dom(f_p) \cap M$, then $\varphi_{M,N}(\alpha) \in \dom(f_p)$ and $f_p(\varphi_{M,N}(\alpha))= f_p(\alpha)$
+\end{itemize}
+\end{definition}
+\end{frame}
+\begin{frame}
+\begin{theorem}
+$\mathbb{P}$ is strongly proper
+\end{theorem}
+\begin{theorem}
+$\mathbb{P}$ has $\aleph_2.c.c$
+\end{theorem}
+\begin{theorem}
+$\mathbb{P}$ preserves the $CH$
+\end{theorem}
+Let $X \in \mathcal{P}(\omega_2) \cap V$ be countable. $D_X=\{p \in \mathbb{P} : \exists \alpha, \beta \in \dom(f_p) \cap X \ s.t. \ f_p(\alpha)=1 \land f_p(\beta)=0\}$ is a dense subset of $\mathbb{P}$.
+\end{frame}
+
+\begin{frame}
+\frametitle{SEQUENCES OF MODELS OF TWO TYPES}
+\framesubtitle{Itay Neeman}
+$\kappa < \lambda < \theta$
+\begin{itemize}
+\item $\mathcal{T}$ is a collection of transitive $\langle W, \in, <_w \rangle \prec \langle H(\theta), \in, <_w \rangle$, and $\mathcal{S}$ is a collection of $\langle M, \in, <_w \rangle \prec \langle H(\theta), \in, <_w \rangle$ with $\kappa \subset M$ and $|M| < \lambda$. All elements of $\mathcal{S} \cup \mathcal{T}$ belong to $H(\theta)$ and contain $\{\kappa, \lambda\}$
+\item If $M_1, M_2 \in \mathcal{S}$ and $M_1 \in M_2$ then $M_1 \subset M_2$
+\item If $M \in \mathcal{S}$ and $W \in M \cap \mathcal{T}$ then $(M \cap W) \in W \cap \mathcal{S}$
+\item Each $W \in \mathcal{T}$ is closed under sequences of lenght $\leq \kappa$ in $H(\theta)$
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{SEQUENCES OF MODELS OF TWO TYPES}
+\framesubtitle{Itay Neeman}
+\begin{block}{}
+$\mathbb{P}_{\kappa, \lambda}^{\mathcal{S}, \mathcal{T}}= \{ \langle M_{\xi} : \xi < \gamma \rangle \in H(\theta) \ | \gamma < \kappa \}$
+such that
+\begin{itemize}
+\item $\forall\xi$, $M_{\xi} \in \mathcal{S} \cup \mathcal{T}$
+\item $\forall \zeta < \gamma$, $\{\xi < \zeta : M_{\xi} \in M_{\zeta}\}$ is cofinal in $\zeta$
+\item $\forall \zeta < \gamma$, $\langle M_{\xi} : \xi < \zeta \land M_{\xi} \in M_{\zeta} \rangle \in M_{\zeta}$
+\item The sequence is closed under intersections
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{TWO APPLICATIONS}
+$\mathcal{S}= \{M \in [H(\theta)]^{\aleph_0} : \langle M, \in, <_w \rangle \prec \langle H(\theta), \in, <_w \rangle \}$
+
+$\mathcal{T}= \{H(\lambda) : \langle H(\lambda), \in, <_w \rangle \prec \langle H(\theta), \in, <_w \rangle \land cf(\lambda) > \omega \}$
+\begin{block}{1}
+$\mathbb{P}_{\in}^{\mathcal{S}, \mathcal{T}}$ preserves $\aleph_1$
+
+If $\lambda$ be a cardinal such that $\omega_1 < \lambda < \theta$, then $\lambda$ is collapsed to $\omega_1$
+
+If $\mathcal{T}$ is a stationary set on $[H(\theta)]^{<\theta}$ then $\mathbb{P}_{\in}^{\mathcal{S}, \mathcal{T}} \Vdash \theta=\omega_2$
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{2}
+Let $\theta$ a Supercompact cardinal and let $J: \theta \longrightarrow H(\theta)$ be the Laver function
+
+$\mathbb{P}_{\in}^{\mathcal{S}, \mathcal{T}}(J)$ is an iterated forcing, constructed using $\mathbb{P}_{\in}^{\mathcal{S}, \mathcal{T}}$. It satisfies:
+\begin{itemize}
+\item[$(1)$] preserves $\aleph_1$
+\item[$(2)$] forces that $\theta = \aleph_2$
+\item[$(3)$] Gives a new proof for the consistency of $PFA$
+\item[$(4)$] $V[G]$ is a model of $PFA$ in which $PFA^+$ fails
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{THE QUESTION}
+\begin{block}{The Problem}
+The forcing of Neeman does not preserve $GCH$. Can we define a version of it preserving the $GCH$?
+\end{block}
+
+\begin{block}{The Idea}
+Replacing the linear part of small nodes with matrices of the same types of models
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{Notations}
+Let $<_w$ be a well-ordering of $H(\omega_2)$. We will fix the following two families:
+$$\ms=\{ M \in [ H(\omega_2)]^{\aleph_0}: \langle M, \in, <_w \rangle \prec \langle  H(\omega_2), \in, <_w \rangle \}$$
+$$\mt=\{ X \in [ H(\omega_2)]^{\aleph_1}: \langle X, \in, <_w \rangle \prec \langle  H(\omega_2), \in, <_w \rangle \land \prescript{\omega}{}{X} \subset X \}$$
+\end{frame}
+\begin{frame}
+\frametitle{Notations}
+We use:
+\begin{itemize}
+\item
+$M, N, L$ and $K$ for elements of $\ms$ which are called small nodes
+\item $W,X, Y$ and $Z$ for elements of $\mt$ which are called transitive nodes
+\item$A, B, C$ and $D$  when the types are not important
+\item Let $\langle A, \in, <_w \rangle$ and $\langle B, \in, <_w \rangle$ be isomorphic. We denote this unique isomorphism by $\varphi_{A,B}:A \longrightarrow B$
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Notations}
+\begin{itemize}
+\item For $A, B \in \ms \cup \mt$ with $A \ncong B$ we say that $A \e B$, if there is an $\in$-path from $A$ to $B$; i.e. there are $C_0, C_1, \dots, C_n \in \ms \cup \mt$ such that $C_i \in C_{i+1}$ for all $i<n$ and $A=C_0, B=C_n$. 
+\item Given $A, B \in p \subset \ms \cup \mt$, $(A,B)_p= \{C \in p: A \e C \e B\}$
+\item Given $A \in p \subset \ms \cup \mt$, $p_{<A}= \{ B \in p \ : \ B \e A\}$
+\end{itemize}
+\end{frame}
+\begin{frame}
+$\fn$ is the set of all finite $p \subset \ms \cup \mt$ such that the following conditions hold.
+\begin{enumerate}
+\item [$(P1)$]
+If $A, B \in p$ and $A \ncong B$, then either:
+\begin{enumerate}
+\item[$(i)$] there exists $B' \in p$ such that $B\cong B'$ and $A \e B'$ in $p$; or
+\item[$(ii)$] there exists $A' \in p$ such that $A\cong A'$ and $B \e A'$ in $p$;
+\end{enumerate}
+\item [$(P2)$]
+If  $M, N \in p \cap \ms, \delta_M = \delta_N$ and $p_{<M} \cap \mt = p_{<N} \cap \mt$, then $M \cong N$. Furthermore for every $X \in (M \cap N) \cap \mt$, $\langle M, \in, <_w, X\cap M \rangle$ is isomorphic to $\langle N, \in, <_w, X\cap N \rangle$;
+\item [$(P3)$]
+If $W, X \in p \cap \mt$ and $\delta_W = \delta_X$, then $X=W$;
+\item [$(P4)$]
+If $A \e B$, then $A \cap B \in p$. Furtheremore if $A \e B \e C$, then either $A=B \cap C$ or $A \e B\cap C$ or $B \cap C \e A$
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\begin{lemma}
+For all $M \in \ms$ and $X \in \mt$, $\delta_{X \cap M}= \delta_M$
+
+If $X \e M$ in a condition $p$, then $X \cap M$ can not be isomorphic to $M$.
+\end{lemma}
+\begin{fact}
+If $A \e M$ it is not necessary to have $A \in M$
+
+If $M \in p \in \fn$, it is not necessarily the case that $p \cap M$ is a condition
+
+If $M \prec H(\omega_2)$ and $p \in \fn \cap M$ it is not always true that $p \cup \{M\} \in \fn$.
+\end{fact}
+\end{frame}
+\begin{frame}
+\begin{lemma}
+Let $\theta$ be a large enough regular cardinal, $M'$ be a countable elementary submodel of $H(\theta)$, Let $q \in  \fn$ be such that $M' \cap H(\omega_2)=M \in q$. Then there is $\hat{q}$ such that:
+\vspace{-2mm}
+\begin{enumerate}
+\item [$(1)$]
+$\hat{q} \in \fn \cap M$;
+\vspace{-2mm}
+\item [$(2)$]
+$\dom(\hat{q})= \dom(q \cap M)$;
+\vspace{-2mm}
+\item [$(3)$]
+$q \cap M \subseteq \hat{q}$;
+\vspace{-2mm}
+\item [$(4)$]
+If $\alpha \in \dom(\hat{q})$ and $N_1 \in q(\alpha) \cap \ms, N_2 \in \hat{q}(\alpha) \cap \ms$, and $N_1 \cap \mt = N_2 \cap \mt$, then $N_1 \cong N_2$;
+\vspace{-2mm}
+\item [$(5)$]
+If $X_1 \in \hat{q} \cap \mt, X_2 \in q \cap \mt$ and $\delta_{X_1}= \delta_{X_2}$, then $X_1=X_2$;
+\vspace{-2mm}
+\item [$(6)$]
+$\hat{q} \cap \mt = q \cap M \cap \mt$
+\vspace{-2mm}
+\item[$(7)$]
+$\hat{q} \cup q \in \fn$
+\end{enumerate}
+\end{lemma}
+\end{frame}
+\begin{frame}
+Let $q \in  \fn $ be such that $M' \cap H(\omega_2)=M \in q$ and let $\mathcal{F}= \{ w= \langle A_l^w \in A_{l-1}^w \in \dots \in A_0^w \rangle \}$ be such that $A_i^w \in q \cup \hat{q}, A_0^w \in q(\delta_M)$ with $A_0^w \cong M$.
+\begin{block}
+
+$q \rest M = \{ \varphi_{A_n^w,B_n}(A_{n+1}^w): w \in \mathcal{F} \land n<l \}$ where $B_0 = M$ and $B_n \e M$ for $n>0$ is either an element of  $q \cup \hat{q}$ or is of the form $\varphi_{A_k^{w'},B_k}(A_{k+1}^{w'})$ for  some $w' \in \mathcal{F}$.
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{lemma}
+Let $M'$ be a countable elementary submodel of $H(\theta)$, with $\fn, \ms, \mt \in M'$ for some $\theta > \omega_2$, a large enough regular cardinal. Let $q \in  \fn$ be such that $M' \cap H(\omega_2)=M \in q$.
+\begin{enumerate}
+\item [$(1)$]
+$q_{<M} \cup \hat{q} \subseteq q \rest M$;
+\item [$(2)$]
+$X \in (q \rest M) \cap \mt$ iff $X$ is a transitive nodes of $q$ which is before $M$;
+\item [$(3)$]
+$q \rest M \in \fn$;
+\item [$(4)$]
+$(q \rest M) \cap M \in \fn \cap M$.
+\end{enumerate}
+\end{lemma}
+\begin{lemma}
+Let $q \in \fn$ and $M \in q \cap \ms$. If $r \leq (q \rest M) \cap M$ and $r \in M$, then $t=(q \rest M) \cup r \cup q$ satisfies $P1$ to $P3$.
+\end{lemma}
+\end{frame}
+\begin{frame}
+For each $M' \in q$ with $M \cong M'$, first take $X \in r\backslash (q \rest M) \cap \mt$ such that $(X, M')_t \cap q\rest M \cap \mt \neq \emptyset$. Let $X'$ be the smallest element of this set, then $X \in M' \cap X'$.
+\begin{block}{Define}
+
+$E_{M'}(X)=[M' \cap X', X')_{q \cup q \rest M}$
+
+$F_{M'}(X)= \{ X \cap N : N \in E_{M'}(X)\}$
+
+\end{block}
+Where $X \in r \backslash(q \rest M) \cap \mt$ is such that $(X, M')_t \cap q\rest M \cap \mt= \emptyset$
+
+\begin{block}{Define}
+
+$E_{M'}(X)$ is the largest interval of small nodes of $q$ starting from every $M' \cong M$.
+
+$F_{M'}(X)= \{ X \cap N : N \in E_{M'}(X)\}$
+\end{block}
+\end{frame}
+\begin{frame}
+Now we define $s=t \cup \bigcup_{X \in r\backslash (q \rest M) \cap \mt}F_{M'}(X)$.
+\begin{lemma}
+$s \in \fn$ and extends $q$ and $r$.
+\end{lemma}
+\begin{theorem}
+$\fn$ is strongly proper.
+\end{theorem}
+\vspace{-4mm}
+\begin{proof}
+Let $\theta$ be a large enough regular cardinal and $M' \prec H(\theta)$ countable with $p \in \fn \cap M'$. Let $M=M' \cap H(\omega_2)$ and $p'=\{M\}$. then $p \in M$ and extends $p' \cap M$. Hence there is $q \in \fn$ such that $q$ extends both $p$ and $p'$. We can find $\hat{q}, q \rest M$ as before, so suppose $r \in D \subset \fn \cap M'$ which $r \leq (q\rest M \cap M)$. In this way, we can find $s$ which extends both $r$ and $q$. So $q$ is a $(\fn, M')$-strongly generic conditin.
+\end{proof}
+\end{frame}
+\begin{frame}
+\begin{theorem}
+Forcing with $\fn$ preserves the $GCH$.
+\end{theorem}
+\end{frame}
+\begin{frame}
+\begin{center}
+\textbf{{\Huge Thank You}}
+\end{center}
+\end{frame}
+%}
+\end{document}
