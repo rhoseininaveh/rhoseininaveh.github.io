@@ -5,7 +5,7 @@
 #### I’m currently learning [Set theory](https://en.wikipedia.org/wiki/Set_theory), specifically [Forcing](https://en.wikipedia.org/wiki/Forcing_(mathematics)) and Forcing with side conditions.
 #### I'm also interested in the following topics: [Combinatorial set theory](https://en.wikipedia.org/wiki/Infinitary_combinatorics), [Descriptive set theory](https://en.wikipedia.org/wiki/Descriptive_set_theory), [Inner model theory](https://en.wikipedia.org/wiki/Inner_model_theory), [Large cardinals](https://en.wikipedia.org/wiki/Large_cardinal), [Determinacy](https://en.wikipedia.org/wiki/Determinacy) and [Cardinal invariants](https://en.wikipedia.org/wiki/Cardinal_characteristics_of_the_continuum).
 # CV
-Download [English]() or [Farsi](Academic CV RHoseiniNaveh.pdf) version.
+Download [English]() or [Farsi]() version.
 ## Activities:
 #### (2020-2024) PhD student at [SBUK](https://pmath.uk.ac.ir/) under the supervision of [Esfandiar Eslami](https://pmath.uk.ac.ir/~esfandiar.eslami) and [Mohammad Golshani](https://math.ipm.ac.ir/~golshani/)
 #### [(2022-2023)](https://dmg.tuwien.ac.at/sandramueller/IMTgroup/) Project assistant in the [Set theory group](https://www.dmg.tuwien.ac.at/fb8/Members.html) at [TU Wien](https://www.tuwien.at/en/mg/dmg) supported by FWF project [V844](https://www.fwf.ac.at/en/research-radar/10.55776/V844) hosted by [Sandra Müller](https://dmg.tuwien.ac.at/sandramueller/)
