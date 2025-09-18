@@ -27,8 +27,8 @@ Download [English]() or [Farsi]() version.
 #### Hilbert's Infinite Hotel -[PDF](Hilbertih.pdf)- [TeX](Hilbertih.tex) (Weekly Lectures - Mahani Math Research Institute - Shahid Bahonar University of Kerman)
 # Contact
 ### e-mail:
-#### r.hoseini.nave@Gmail.com
-#### r.hoseini@math.uk.ac.ir
+#### [r DOT hoseini DOT nave AT gmail DOT com](mailto:r.hoseini.nave@Gmail.com)
+#### [r DOT hoseini AT math DOT uk DOT ac DOT ir](r.hoseini@math.uk.ac.ir)
 ### WhatsApp & Telegram:
 #### +4366565956490
 # Private
