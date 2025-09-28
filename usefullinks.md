@@ -25,9 +25,11 @@
 #### [Luca Motto Ros](https://sites.google.com/site/lucamottoros/)
 #### [Martin Goldstern](https://dmg.tuwien.ac.at/goldstern/www/)
 #### [Matteo Viale](http://www.logicatorino.altervista.org/matteo_viale/)
+#### [Mirna Dzamonja](https://logiqueconsult.eu/)
 #### [Mohammad Golshani](https://math.ipm.ac.ir/~golshani/)
 #### [Moti Gitik](http://www.math.tau.ac.il/~gitik/)
 #### [Natasha Dobrinen](https://cs.du.edu/~ndobrine/)
+#### [Obrad Kasum](https://obradkasum.github.io/)
 #### [Omer Ben Neria](https://math.huji.ac.il/~omerbn/)
 #### [Osvaldo Guzman](https://www.matmor.unam.mx/~oguzman/)
 #### [Piotr Koszmider](https://www.impan.pl/~koszmider/home-can.html)
@@ -36,6 +38,7 @@
 #### [Ronald B Jensen](https://web.archive.org/web/20240304141210/https://www.mathematik.hu-berlin.de/~raesch/org/jensen.html)
 #### [Sandra Müller](https://dmg.tuwien.ac.at/sandramueller/)
 #### [Shelah](https://shelah.logic.at/)
+#### [Stephen C. Jackson](https://sites.math.unt.edu/~sjackson/index.html)
 #### [Sy David Friedman](https://www.logic.univie.ac.at/~dsyfriedman/)
 #### [Thomas Gilton](http://www.math.pitt.edu/~tdg25/)
 #### [Trevor M Wilson](https://www.math.uci.edu/~twilson/)
@@ -43,8 +46,6 @@
 #### [Vera Fischer](https://www.logic.univie.ac.at/~vfischer/)
 #### [yair hayut](https://mathematics.huji.ac.il/people/yair-hayut-0)
 #### [Zoltan Vidnyanszky](https://vidnyanz.elte.hu/)
-#### [Obrad Kasum](https://obradkasum.github.io/)
-#### [Stephen C. Jackson](https://sites.math.unt.edu/~sjackson/index.html)
 # Conferences
 # Seminars
 #### [The Baltic Set Theory Seminar](https://www.impan.pl/~gsargsyan/bsts.html)
