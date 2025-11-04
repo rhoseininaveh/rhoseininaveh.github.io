@@ -47,6 +47,7 @@
 #### [Vera Fischer](https://www.logic.univie.ac.at/~vfischer/)
 #### [yair hayut](https://mathematics.huji.ac.il/people/yair-hayut-0)
 #### [Zoltan Vidnyanszky](https://vidnyanz.elte.hu/)
+####[Gabriel Goldberg](https://math.berkeley.edu/~goldberg/)
 # Conferences
 # Seminars
 #### [The Baltic Set Theory Seminar](https://www.impan.pl/~gsargsyan/bsts.html)
