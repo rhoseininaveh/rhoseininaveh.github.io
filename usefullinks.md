@@ -39,6 +39,7 @@
 * [Arnold William Miller](https://people.math.wisc.edu/~awmille1/res/index.html)
 * [Rahman Mohammadpour](https://sites.google.com/site/rahmanmohammadpour/)
 * [Charles Morgan](https://www.ucl.ac.uk/~ucahcjm/)
+* [Justin Moore](https://justintatchmoore.github.io/homepage/)
 * [Miguel Ángel Mota](https://gente.itam.mx/miguel.mota/index.html)
 * [Luca Motto Ros](https://sites.google.com/site/lucamottoros/)
 * [Sandra Müller](https://dmg.tuwien.ac.at/sandramueller/)
